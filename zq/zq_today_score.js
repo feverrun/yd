@@ -9,7 +9,7 @@ shaolin-kongfu
 [rewrite_local]
 
 #中青看点每日收益查询
-https://kandian.wkandian.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/zq/zq_today_score.js
+https://kandian.wkandian.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_today_score.js
 [MITM]
 hostname = kandian.wkandian.com
 */

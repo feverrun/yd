@@ -9,7 +9,7 @@ shaolin-kongfu
 [rewrite_local]
 
 #火爆转发
-https://ant.xunsl.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/jc_share.js
+https://ant.xunsl.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/jc_share.js
 [MITM]
 hostname = ant.xunsl.com
 */

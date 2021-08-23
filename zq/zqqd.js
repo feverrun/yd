@@ -11,7 +11,7 @@ shaolin-kongfu
 [rewrite_local]
 
 #签到
-https://kandian.wkandian.com/v5/CommonReward/toGetReward.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/zq/zqqd.js
+https://kandian.wkandian.com/v5/CommonReward/toGetReward.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zqqd.js
 [MITM]
 hostname = kandian.wkandian.com
 */

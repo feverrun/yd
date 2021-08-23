@@ -12,7 +12,7 @@
               "lookStartbody"
             ], 
             "repo": "https://github.com/feverrun/yd/blob/main/jckkz.js",  
-            "script": "https://raw.githubusercontent.com/feverrun/yd/main/jckkz.js", 
+            "script": "https://raw.githubusercontent.com/feverrun/yd/master/jckkz.js", 
              
             "icons": [ 
               "https://cdn.jsdelivr.net/gh/NANXIAO1971/ceshi@main/picture/jckd1.png",
@@ -26,7 +26,7 @@
               "wzbody"
             ], 
             "repo": "https://github.com/feverrun/yd/blob/main/jcwz.js", 
-            "script": "https://raw.githubusercontent.com/feverrun/yd/main/jcwz.js", 
+            "script": "https://raw.githubusercontent.com/feverrun/yd/master/jcwz.js", 
             "icons": [ 
               "https://cdn.jsdelivr.net/gh/NANXIAO1971/ceshi@main/picture/jckd1.png",
               "https://cdn.jsdelivr.net/gh/NANXIAO1971/ceshi@main/picture/jckd1.png"
@@ -39,7 +39,7 @@
               "qdbody"
             ], 
             "repo": "https://github.com/feverrun/yd/blob/main/jcqd.js",
-            "script": "https://raw.githubusercontent.com/feverrun/yd/main/jcqd.js",     
+            "script": "https://raw.githubusercontent.com/feverrun/yd/master/jcqd.js",     
             "icons": [ 
               "https://cdn.jsdelivr.net/gh/NANXIAO1971/ceshi@main/picture/jckd1.png",
               "https://cdn.jsdelivr.net/gh/NANXIAO1971/ceshi@main/picture/jckd1.png"
@@ -52,7 +52,7 @@
               "jc_cookie"
             ], 
             "repo": "https://github.com/feverrun/yd/blob/main/jc_share.js",
-            "script": "https://raw.githubusercontent.com/feverrun/yd/main/jc_share.js",     
+            "script": "https://raw.githubusercontent.com/feverrun/yd/master/jc_share.js",     
             "icons": [ 
               "https://cdn.jsdelivr.net/gh/NANXIAO1971/ceshi@main/picture/jckd1.png",
               "https://cdn.jsdelivr.net/gh/NANXIAO1971/ceshi@main/picture/jckd1.png"

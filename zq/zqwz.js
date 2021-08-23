@@ -12,11 +12,11 @@ shaolin-kongfu
 kandian.wkandian.com
 【rewrite】
 文章
-https://kandian.wkandian.com/v5/article/info.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/zq/zqwz.js
+https://kandian.wkandian.com/v5/article/info.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zqwz.js
 视频
-https://kandian.wkandian.com/v5/article/detail.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/zq/zqwz.js
+https://kandian.wkandian.com/v5/article/detail.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zqwz.js
 时长
-https://kandian.wkandian.com/v5/user/stay.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/zq/zqwz.js
+https://kandian.wkandian.com/v5/user/stay.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zqwz.js
 
 */
 

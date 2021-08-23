@@ -13,7 +13,7 @@ shaolin-kongfu
 [rewrite_local]
 
 #中青看点宝箱
-https://kandian.wkandian.com/v5/CommonReward/toGetReward.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/zq/zqbox.js
+https://kandian.wkandian.com/v5/CommonReward/toGetReward.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zqbox.js
 [MITM]
 hostname = kandian.wkandian.com
 */

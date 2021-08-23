@@ -3,7 +3,7 @@
   "desc": "无",
   "date": "2021-08-05 20:32:08",
   "author": "author",
-  "resource": "https://raw.githubusercontent.com/feverrun/yd/main/jc_cron.json",
+  "resource": "https://raw.githubusercontent.com/feverrun/yd/master/jc_cron.json",
   "list": [
     {
       "name": "晶彩签到",
@@ -11,7 +11,7 @@
       "time": "15 2 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/main/jcqd.js"
+        "target": "https://raw.githubusercontent.com/feverrun/yd/master/jcqd.js"
       }
     },
     {
@@ -21,7 +21,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/main/jcwz.js"
+        "target": "https://raw.githubusercontent.com/feverrun/yd/master/jcwz.js"
       }
     },
     {
@@ -31,7 +31,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/main/jckkz.js"
+        "target": "https://raw.githubusercontent.com/feverrun/yd/master/jckkz.js"
       }
     },
     {
@@ -41,7 +41,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/main/jc_share.js"
+        "target": "https://raw.githubusercontent.com/feverrun/yd/master/jc_share.js"
       }
     },
     {
@@ -51,7 +51,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/main/jc_Adv_video.js"
+        "target": "https://raw.githubusercontent.com/feverrun/yd/master/jc_Adv_video.js"
       }
     },
     {
@@ -61,7 +61,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/main/jcbox.js"
+        "target": "https://raw.githubusercontent.com/feverrun/yd/master/jcbox.js"
       }
     },
     {
@@ -71,7 +71,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/main/jc_today_score.js"
+        "target": "https://raw.githubusercontent.com/feverrun/yd/master/jc_today_score.js"
       }
     }
   ]

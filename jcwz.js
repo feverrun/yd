@@ -15,9 +15,9 @@ tom大佬的频道:https://t.me/tom_ww
 
 [rewrite_local]
 #阅读文章
-https://ant.xunsl.com/v5/article/info.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/jcwz.js
+https://ant.xunsl.com/v5/article/info.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/jcwz.js
 #阅读时长（抓取一个即可）
-https://ant.xunsl.com/v5/user/stay.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/jcwz.js
+https://ant.xunsl.com/v5/user/stay.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/jcwz.js
 [MITM]
 hostname = ant.xunsl.com
 */

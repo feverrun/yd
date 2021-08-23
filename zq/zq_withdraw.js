@@ -7,12 +7,12 @@
 万分感谢！！！
 
 脚本地址：
-https://raw.githubusercontent.com/feverrun/yd/main/zq/zq_withdraw.js
+https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_withdraw.js
 定时确保在每日首次火爆转发之后（zq_share.js），一天一次
 ***************************************************************************
 v2p食用说明：
 1.添加重写如下：
-https://kandian.wkandian.com/v5/wechat/withdraw2.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/zq/zq_withdraw.js
+https://kandian.wkandian.com/v5/wechat/withdraw2.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_withdraw.js
 2.打开app进入提现页面，选择对应金额，点击立即提现（不管当日是否已经提现，都能抓），到变量中查看到有zq_withdraw即可
 3.注意多账号用户抓包zq_withdraw时需要与zq_cookie账号顺序一致
 4.zq_cash不填默认0.3元，填的话有0.3，30两个选项（boxjs订阅中可直接修改，没有订阅的话直接新建变量即可）

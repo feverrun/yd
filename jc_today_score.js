@@ -9,7 +9,7 @@ shaolin-kongfu
 [rewrite_local]
 
 #晶彩看点每日收益查询
-https://ant.xunsl.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/jc_today_score.js
+https://ant.xunsl.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/jc_today_score.js
 [MITM]
 hostname = ant.xunsl.com
 */

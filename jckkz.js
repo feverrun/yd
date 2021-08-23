@@ -9,7 +9,7 @@ shaolin-kongfu
 [rewrite_local]
 
 #看看赚
-https://ant.xunsl.com/v5/nameless/adlickstart.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/jckkz.js
+https://ant.xunsl.com/v5/nameless/adlickstart.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/jckkz.js
 [MITM]
 hostname = ant.xunsl.com
 */

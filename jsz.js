@@ -4,7 +4,7 @@
 原作者：柠檬
 
 适配v2p和青龙，修复v2p运行偶现报错问题，需要依赖 crypto-js.js ，请将该文件放在脚本同级目录即可
-crypto-js 文件地址：https://raw.githubusercontent.com/feverrun/yd/main/crypto-js.js
+crypto-js 文件地址：https://raw.githubusercontent.com/feverrun/yd/master/crypto-js.js
 圈x请跑原作者脚本
 
 青龙抓包以下链接的header
@@ -16,12 +16,12 @@ v2p配置重写如下：
 ***************************************************************************************************************
 [rewrite]
 
-https://hh.102727.com/user/myInfo 重写目标 https://raw.githubusercontent.com/feverrun/yd/main/jsz.js
+https://hh.102727.com/user/myInfo 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/jsz.js
 
 hostname = hh.102727.com
 
 [task]
-建议定时每十分钟跑一次 https://raw.githubusercontent.com/feverrun/yd/main/jsz.js
+建议定时每十分钟跑一次 https://raw.githubusercontent.com/feverrun/yd/master/jsz.js
 ***************************************************************************************************************
 活动地址：https://github.com/feverrun/yd/blob/main/jysz.jpg
 食用方法：
@@ -32,7 +32,7 @@ hostname = hh.102727.com
 每满4000金币（4毛）微信自动提现
 
 */
-// */10 * * * * https://raw.githubusercontent.com/feverrun/yd/main/jsz.js
+// */10 * * * * https://raw.githubusercontent.com/feverrun/yd/master/jsz.js
 
 
 // @grant    require

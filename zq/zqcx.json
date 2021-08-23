@@ -5,45 +5,45 @@
   "rewrite": [
     {
       "match": "https://kandian.wkandian.com/v5/article/info.json",
-      "target": "https://raw.githubusercontent.com/feverrun/yd/main/zq/zqwz.js",
+      "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqwz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/article/detail.json",
-      "target": "https://raw.githubusercontent.com/feverrun/yd/main/zq/zqwz.js",
+      "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqwz.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v5/user/stay.json",
-      "target": "https://raw.githubusercontent.com/feverrun/yd/main/zq/zqwz.js",
+      "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqwz.js",
       "enable": true
     }, 
     {
       "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
-      "target": "https://raw.githubusercontent.com/feverrun/yd/main/zq/zqqd.js",
+      "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqqd.js",
       "enable": true
     },
     {
       "match": "https://kandian.wkandian.com/v17/NewTask/getTaskList.json",
-      "target": "https://raw.githubusercontent.com/feverrun/yd/main/zq/zq_today_score.js",
+      "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_today_score.js",
       "enable": true
     }
     ,
     {
       "match": "https://kandian.wkandian.com/v5/nameless/adlickstart.json",
-      "target": "https://raw.githubusercontent.com/feverrun/yd/main/zq/zqkkz.js",
+      "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqkkz.js",
       "enable": true
     }
     ,
     {
       "match": "https://kandian.wkandian.com/v5/CommonReward/toGetReward.json",
-      "target": "https://raw.githubusercontent.com/feverrun/yd/main/zq/zqbox.js",
+      "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqbox.js",
       "enable": true
     }
      ,
     {
       "match": "https://kandian.wkandian.com/v5/wechat/withdraw2.json",
-      "target": "https://raw.githubusercontent.com/feverrun/yd/main/zq/zq_withdraw.js",
+      "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_withdraw.js",
       "enable": true
     }
   ]

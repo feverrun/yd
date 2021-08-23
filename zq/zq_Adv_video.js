@@ -9,7 +9,7 @@ shaolin-kongfu
 使用zq_cookie
 
 脚本地址：
-https://raw.githubusercontent.com/feverrun/yd/main/zq/zq_Adv_video.js
+https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_Adv_video.js
 定时确保在jcbox脚本运行之前完成即可，一天一次
 
 首次跑完之后需要打开zqbox的重写，在app-任务-每日任务-看福利视频处，领取任务奖励，以后就不用管了
