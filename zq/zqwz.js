@@ -1,6 +1,6 @@
 
 /*
-shaolin-kongfu
+feverrun
 
 软件名称：中青看点
 赞赏:邀请码57984759
@@ -123,7 +123,7 @@ const wzheader = {
         // date = new Date()
         // if ($.isNode() &&date.getHours() == 11 && date.getMinutes()<10) {
         //     if (message.length != 0) {
-        //            await notify.sendNotify("晶彩看点文章阅读", `${message}\n\n shaolin-kongfu`);
+        //            await notify.sendNotify("晶彩看点文章阅读", `${message}\n\n feverrun`);
         //     }
         // } else {
         //     $.msg($.name, "",  message)

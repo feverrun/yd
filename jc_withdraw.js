@@ -117,10 +117,10 @@ if (!jc_cookie) {
 
 
          if (message.length != 0) {
-             await notify ? notify.sendNotify("晶彩看点提现", `${message}\n\n shaolin-kongfu`) :
-                 $.msg($.name, "晶彩看点提现", `${message}\n\n shaolin-kongfu`);
+             await notify ? notify.sendNotify("晶彩看点提现", `${message}\n\n feverrun`) :
+                 $.msg($.name, "晶彩看点提现", `${message}\n\n feverrun`);
          } else if ($.isNode()) {
-             await notify.sendNotify("晶彩看点提现", `${message}\n\nshaolin-kongfu`);
+             await notify.sendNotify("晶彩看点提现", `${message}\n\nfeverrun`);
          }
      }
      })()

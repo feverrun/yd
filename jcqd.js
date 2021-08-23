@@ -57,7 +57,7 @@ const qdheader={
         date = new Date()
         if ($.isNode() &&date.getHours() == 11 && date.getMinutes()<10) {
             if (message.length != 0) {
-                   await notify.sendNotify("晶彩看点签到", `${message}\n\n shaolin-kongfu`);
+                   await notify.sendNotify("晶彩看点签到", `${message}\n\n feverrun`);
             }
         } else {
             $.msg($.name, "",  message)

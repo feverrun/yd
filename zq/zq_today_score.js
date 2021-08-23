@@ -1,5 +1,5 @@
 /*
-shaolin-kongfu
+feverrun
 
 软件名称：中青看点
 赞赏:邀请码57984759
@@ -71,10 +71,10 @@ if (!zq_cookie) {
 
 
          if (message.length != 0) {
-             await notify ? notify.sendNotify("中青看点收益查询", `${message}\n\n shaolin-kongfu`) :
+             await notify ? notify.sendNotify("中青看点收益查询", `${message}\n\n feverrun`) :
                  $.msg($.name, "中青看点收益查询", `${message}`);
          } else if ($.isNode()) {
-             await notify.sendNotify("中青看点收益查询", `${message}\n\nshaolin-kongfu`);
+             await notify.sendNotify("中青看点收益查询", `${message}\n\nfeverrun`);
          }
      }
      })()

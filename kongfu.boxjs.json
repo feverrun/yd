@@ -1,7 +1,7 @@
 {
-    "id": "shaolin-kongfu.app.sub",
+    "id": "feverrun.app.sub",
     "name": "少林功夫boxjs订阅",
-    "author": "@shaolin-kongfu",
+    "author": "@feverrun",
     "icon": "https://raw.githubusercontent.com/feverrun/yd/master/kongfu.jpg",
     "repo": "https://github.com/feverrun/yd",
     "apps": [

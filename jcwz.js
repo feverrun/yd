@@ -1,5 +1,5 @@
 /*
-shaolin-kongfu
+feverrun
 
 仅适配v2p以及青龙（青龙请自行抓包），不支持圈x
 
@@ -125,7 +125,7 @@ const wzheader = {
         // date = new Date()
         // if ($.isNode() &&date.getHours() == 11 && date.getMinutes()<10) {
         //     if (message.length != 0) {
-        //            await notify.sendNotify("晶彩看点文章阅读", `${message}\n\n shaolin-kongfu`);
+        //            await notify.sendNotify("晶彩看点文章阅读", `${message}\n\n feverrun`);
         //     }
         // } else {
         //     $.msg($.name, "",  message)

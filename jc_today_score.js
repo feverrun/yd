@@ -1,5 +1,5 @@
 /*
-shaolin-kongfu
+feverrun
 
 软件名称：晶彩看点
 赞赏:邀请码54870223
@@ -75,10 +75,10 @@ if (!jc_cookie) {
 
 
          if (message.length != 0) {
-             await notify ? notify.sendNotify("晶彩看点收益查询", `${message}\n\n shaolin-kongfu`) :
+             await notify ? notify.sendNotify("晶彩看点收益查询", `${message}\n\n feverrun`) :
                  $.msg($.name, "晶彩看点收益查询", `${message}`);
          } else if ($.isNode()) {
-             await notify.sendNotify("晶彩看点收益查询", `${message}\n\nshaolin-kongfu`);
+             await notify.sendNotify("晶彩看点收益查询", `${message}\n\nfeverrun`);
          }
      }
      })()
