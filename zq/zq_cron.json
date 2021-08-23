@@ -3,7 +3,7 @@
   "desc": "无",
   "date": "2021-08-05 20:32:08",
   "author": "author",
-  "resource": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_cron.json",
+  "resource": "https://ghproxy.com/https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_cron.json",
   "list": [
     {
       "name": "中青签到",
@@ -11,7 +11,7 @@
       "time": "15 2 * * *",
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqqd.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/feverrun/yd/master/zq/zqqd.js"
       }
     },
     {
@@ -21,7 +21,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqwz.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/feverrun/yd/master/zq/zqwz.js"
       }
     },
     {
@@ -31,7 +31,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqkkz.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/feverrun/yd/master/zq/zqkkz.js"
       }
     },
     {
@@ -41,7 +41,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_share.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_share.js"
       }
     },
     {
@@ -51,7 +51,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_Adv_video.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_Adv_video.js"
       }
     },
     {
@@ -61,7 +61,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zqbox.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/feverrun/yd/master/zq/zqbox.js"
       }
     },
     {
@@ -71,7 +71,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_today_score.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_today_score.js"
       }
     },
     {
@@ -81,7 +81,7 @@
       "running": true,
       "job": {
         "type": "runjs",
-        "target": "https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_withdraw.js"
+        "target": "https://ghproxy.com/https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_withdraw.js"
       }
     }
 
