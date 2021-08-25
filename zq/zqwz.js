@@ -3,10 +3,6 @@
 feverrun
 
 软件名称：中青看点
-赞赏:邀请码57984759
-
-万分感谢！！
-
 
 【MITM】
 kandian.wkandian.com
@@ -18,6 +14,8 @@ https://kandian.wkandian.com/v5/article/detail.json 重写目标 https://raw.git
 时长
 https://kandian.wkandian.com/v5/user/stay.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zqwz.js
 
+ [Script]
+ cron "11 7,12,18 * * *" script-path=zqwz.js, tag=中青看点阅读文章
 */
 
 const $ = new Env("中青看点阅读文章");

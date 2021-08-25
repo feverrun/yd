@@ -1,21 +1,13 @@
 /*
 feverrun
 
-软件名称：中青看点
-赞赏:邀请码57984759
-
-万分感谢！！
-
-注意，会与签到重写冲突，抓之前请关闭签到的重写！！
-注意，会与签到重写冲突，抓之前请关闭签到的重写！！
-注意，会与签到重写冲突，抓之前请关闭签到的重写！！
-
-[rewrite_local]
-
 #中青看点宝箱
 https://kandian.wkandian.com/v5/CommonReward/toGetReward.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zqbox.js
 [MITM]
 hostname = kandian.wkandian.com
+
+ [Script]
+ cron "5 22 * * *" script-path=zqbox.js, tag=中青任务宝箱
 */
 
 const $ = new Env('中青看点任务宝箱领取');

@@ -7,7 +7,7 @@ https://kandian.wkandian.com/v5/task/browse_start.json 重写目标 zqllz.js
 hostname = kandian.wkandian.com
 
  [Script]
- cron "35 7 * * *" script-path=zq_wakeup.js, tag=中青浏览赚
+ cron "35 7 * * *" script-path=zqllz.js, tag=中青浏览赚
 */
 const $ = new Env("中青看点浏览赚");
 const notify = $.isNode() ? require('./sendNotify') : '';

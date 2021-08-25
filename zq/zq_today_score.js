@@ -12,6 +12,9 @@ feverrun
 https://kandian.wkandian.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_today_score.js
 [MITM]
 hostname = kandian.wkandian.com
+
+ [Script]
+ cron "12 23 * * *" script-path=zq_today_score.js, tag=中青看点收益统计
 */
 
 const $ = new Env("中青看点收益统计");

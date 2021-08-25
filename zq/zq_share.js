@@ -2,12 +2,10 @@
 feverrun
 
 软件名称：中青看点
-赞赏:邀请码57984759
-
-万分感谢！！
-
 #火爆转发
 
+[Script]
+ cron "8 6,12,18 * * *" script-path=zq_share.js, tag=中青看点火爆转发
 */
 
 const $ = new Env("中青看点火爆转发");

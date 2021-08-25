@@ -3,17 +3,15 @@
 feverrun
 
 软件名称：中青看点
-赞赏:邀请码57984759
-
-万分感谢！！
-
-
 [rewrite_local]
 
 #签到
 https://kandian.wkandian.com/v5/CommonReward/toGetReward.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zqqd.js
 [MITM]
 hostname = kandian.wkandian.com
+
+ [Script]
+ cron "50 6 * * *" script-path=zqqd.js, tag=中青看点签到
 */
 const $ = new Env("中青看点签到");
 const notify = $.isNode() ? require('./sendNotify') : '';

@@ -12,67 +12,66 @@ let zq_cookies = ""
 var myDate = new Date();
 var hour=myDate.getHours();
 
- if (!zq_cookie) {
-     $.msg($.name, '【提示】进入点击右下角"任务图标"，再跑一次脚本', '不知道说啥好', {
-         "open-url": "给您劈个叉吧"
-     });
-     $.done()
- }
- else if (zq_cookie.indexOf("@") == -1 && zq_cookie.indexOf("@") == -1) {
-            zq_cookieArr.push(zq_cookie)
- }
- else if (zq_cookie.indexOf("@") > -1) {
-            zq_cookies = zq_cookie.split("@")
- }
- else if (process.env.zq_cookie && process.env.zq_cookie.indexOf('@') > -1) {
-            zq_cookieArr = process.env.zq_cookie.split('@');
-            console.log(`您选择的是用"@"隔开\n`)
- }
- else {
-            zq_cookies = [process.env.zq_cookie]
- };
-    Object.keys(zq_cookies).forEach((item) => {
-        if (zq_cookies[item]) {
-            zq_cookieArr.push(zq_cookies[item])
-        }
-    })
+if (!zq_cookie) {
+    $.msg($.name, '【提示】进入点击右下角"任务图标"，再跑一次脚本', '不知道说啥好', {
+        "open-url": "给您劈个叉吧"
+    });
+    $.done()
+}
+else if (zq_cookie.indexOf("@") == -1 && zq_cookie.indexOf("@") == -1) {
+    zq_cookieArr.push(zq_cookie)
+}
+else if (zq_cookie.indexOf("@") > -1) {
+    zq_cookies = zq_cookie.split("@")
+}
+else if (process.env.zq_cookie && process.env.zq_cookie.indexOf('@') > -1) {
+    zq_cookieArr = process.env.zq_cookie.split('@');
+    console.log(`您选择的是用"@"隔开\n`)
+}
+else {
+    zq_cookies = [process.env.zq_cookie]
+};
+Object.keys(zq_cookies).forEach((item) => {
+    if (zq_cookies[item]) {
+        zq_cookieArr.push(zq_cookies[item])
+    }
+})
 
 !(async () => {
-        console.log(`共${zq_cookieArr.length}个cookie`)
-	        for (let k = 0; k < zq_cookieArr.length; k++) {
-                var time1 = Date.parse( new Date() ).toString();
-                time1 = time1.substr(0,10);
-		        bodyVal = zq_cookieArr[k].split('&uid=')[0];
-                cookie = bodyVal.replace(/zqkey=/, "cookie=")
-                cookie_id = cookie.replace(/zqkey_id=/, "cookie_id=")
-                zq_cookie1= cookie_id  +'&device_brand=xfdg&device_id=cc7dgdsgfsz83e&device_model=1gx&device_platform=android&device_type=android&inner_version=202107261526&mi=0&openudid=cc7dgdsgfsz83e&os_api=27&os_version=bdftgsdfga&phone_network=WIFI&phone_sim=1'+'&request_time=' + time1 +'&time=' + time1 +'&'+ bodyVal
-                //console.log(`${zq_cookie1}`)
-                if(hour >= 8 ){
-                console.log(`--------第 ${k + 1} 个账号早起打卡报名中--------\n`)
-                await signup()
-                await $.wait(2000)
-                     if ($.message.length != 0) {
-                 message += "账号" + (k + 1) + "：  " + $.message + " \n"
-             }
-                console.log("\n\n")
-                } else if(hour >= 5 && hour < 8){
-                    console.log(`--------第 ${k + 1} 个账号早起打卡中--------\n`)
-                    await wakeup()
-                    await $.wait(2000)
-                     if ($.message.length != 0) {
-                 message += "账号" + (k + 1) + "：  " + $.message + " \n"
-             }
-                    console.log("\n\n")
-
-                }
-                if (message.length != 0) {
-             await notify ? notify.sendNotify("中青看点打卡", `${message}\n\n 吹水群：https://t.me/ShaolinTemple2`) :
-                 $.msg($.name, "中青看点打卡", `${message}\n\n 吹水群：https://t.me/ShaolinTemple2`);
-         } else if ($.isNode()) {
-             await notify.sendNotify("中青看点打卡", `${message}\n\n 吹水群：https://t.me/ShaolinTemple2`);
-         }
+    console.log(`共${zq_cookieArr.length}个cookie`)
+    for (let k = 0; k < zq_cookieArr.length; k++) {
+        var time1 = Date.parse( new Date() ).toString();
+        time1 = time1.substr(0,10);
+        bodyVal = zq_cookieArr[k].split('&uid=')[0];
+        cookie = bodyVal.replace(/zqkey=/, "cookie=")
+        cookie_id = cookie.replace(/zqkey_id=/, "cookie_id=")
+        zq_cookie1= cookie_id  +'&device_brand=xfdg&device_id=cc7dgdsgfsz83e&device_model=1gx&device_platform=android&device_type=android&inner_version=202107261526&mi=0&openudid=cc7dgdsgfsz83e&os_api=27&os_version=bdftgsdfga&phone_network=WIFI&phone_sim=1'+'&request_time=' + time1 +'&time=' + time1 +'&'+ bodyVal
+        //console.log(`${zq_cookie1}`)
+        if(hour >= 8 ){
+            console.log(`--------第 ${k + 1} 个账号早起打卡报名中--------\n`)
+            await signup()
+            console.log("\n\n")
+            if ($.message.length != 0) {
+                message += "账号" + (k + 1) + "：  " + $.message + " \n"
             }
-     })()
+            await $.wait(5000)
+        } else if(hour >= 5 && hour < 8){
+            console.log(`--------第 ${k + 1} 个账号早起打卡中--------\n`)
+            await wakeup()
+            console.log("\n\n")
+            if ($.message.length != 0) {
+                message += "账号" + (k + 1) + "：  " + $.message + " \n"
+            }
+            await $.wait(5000)
+        }
+        if (message.length != 0) {
+            await notify ? notify.sendNotify("中青看点打卡", `${message}\n\n 吹水群：https://t.me/ShaolinTemple2`) :
+                $.msg($.name, "中青看点打卡", `${message}\n\n 吹水群：https://t.me/ShaolinTemple2`);
+        } else if ($.isNode()) {
+            await notify.sendNotify("中青看点打卡", `${message}\n\n 吹水群：https://t.me/ShaolinTemple2`);
+        }
+    }
+})()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
 
@@ -81,8 +80,8 @@ function signup(timeout = 0) {
         let url = {
             url : 'https://kd.youth.cn/WebApi/PunchCard/signUp?'+zq_cookie1,
             headers : {'Host': 'kd.youth.cn',
-            'Content-Length': '0',
-             'Referer':' https://kd.youth.cn/h5/20190603cardactive/?'+'keyword_wyq=woyaoq.com&access=4G&app-version=8.1.2&app_version=8.1.2&carrier=%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8&channel=c1005&'+zq_cookie1
+                'Content-Length': '0',
+                'Referer':' https://kd.youth.cn/h5/20190603cardactive/?'+'keyword_wyq=woyaoq.com&access=4G&app-version=8.1.2&app_version=8.1.2&carrier=%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8&channel=c1005&'+zq_cookie1
             },
         }//xsgbody,}
         $.post(url, async (err, resp, data) => {
@@ -96,15 +95,16 @@ function signup(timeout = 0) {
                     console.log(`瓜分人数 ${signup}\n`)
                     console.log(`瓜分金额 ${result.data.jackpot_money}`)
                     $.message = `中青打卡赚钱报名:${result.msg}\n 瓜分人数:${signup} \n 瓜分金额:${result.data.jackpot_money}元`
-                    //$.msg($.name, "", `中青打卡赚钱报名:${result.msg}\n 瓜分人数:${signup} \n 瓜分金额:${result.data.jackpot_money}元`);
+                    $.msg($.name, "", `中青打卡赚钱报名:${result.msg}\n 瓜分人数:${signup} \n 瓜分金额:${result.data.jackpot_money}元`);
                 }else{
+                    $.message = `结果:${result.msg}\n`
                     console.log(result)
                 }
             } catch (e) {
             } finally {
                 resolve()
             }
-            },timeout)
+        },timeout)
     })
 }
 
@@ -113,8 +113,8 @@ function wakeup(timeout = 0) {
         let url = {
             url : 'https://kd.youth.cn/WebApi/PunchCard/doCard?'+zq_cookie1,
             headers : {'Host': 'kd.youth.cn',
-            'Content-Length': '0',
-             'Referer':' https://kd.youth.cn/h5/20190603cardactive/?'+'keyword_wyq=woyaoq.com&access=4G&app-version=8.1.2&app_version=8.1.2&carrier=%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8&channel=c1005&'+zq_cookie1
+                'Content-Length': '0',
+                'Referer':' https://kd.youth.cn/h5/20190603cardactive/?'+'keyword_wyq=woyaoq.com&access=4G&app-version=8.1.2&app_version=8.1.2&carrier=%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8&channel=c1005&'+zq_cookie1
             },
         }
         $.post(url, async (err, resp, data) => {
@@ -129,7 +129,7 @@ function wakeup(timeout = 0) {
                     console.log(`瓜分人数 ${signup}\n`)
                     console.log(`瓜分金额 ${result.data.jackpot_money}`)
                     $.message = `中青打卡结果:${result.msg}\n打卡时间：${result.data.card_time}\n瓜分人数:${signup} \n 瓜分金额:${result.data.jackpot_money}元`
-                    //$.msg($.name, "", `中青打卡结果:${result.msg}\n打卡时间：${result.data.card_time}\n瓜分人数:${signup} \n 瓜分金额:${result.data.jackpot_money}元`);
+                    $.msg($.name, "", `中青打卡结果:${result.msg}\n打卡时间：${result.data.card_time}\n瓜分人数:${signup} \n 瓜分金额:${result.data.jackpot_money}元`);
                 }else{
                     console.log(result)
                 }
@@ -137,7 +137,7 @@ function wakeup(timeout = 0) {
             } finally {
                 resolve()
             }
-            },timeout)
+        },timeout)
     })
 }
 

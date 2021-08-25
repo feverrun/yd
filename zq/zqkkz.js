@@ -1,17 +1,15 @@
 /*
 feverrun
-
 软件名称：中青看点
-赞赏:邀请码57984759
-
-万分感谢！！
-
 [rewrite_local]
 
 #看看赚
 https://kandian.wkandian.com/v5/nameless/adlickstart.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/zq/zqkkz.js
 [MITM]
 hostname = kandian.wkandian.com
+
+[Script]
+ cron "7 9 * * *" script-path=zqkkz.js, tag=中青看点看看赚
 */
 const $ = new Env("中青看点看看赚");
 const notify = $.isNode() ? require('./sendNotify') : '';

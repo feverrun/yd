@@ -2,14 +2,11 @@
 feverrun
 
 软件名称：中青看点
-赞赏:邀请码57984759
-万分感谢！！
-
-
 
 转盘抽奖，使用zq_cookie
 
-
+[Script]
+ cron "5 5 * * *" script-path=zq_Rotary.js, tag=中青看点大转盘抽奖
  */
 
 const $ = new Env("中青看点大转盘抽奖");

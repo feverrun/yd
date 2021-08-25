@@ -9,7 +9,7 @@ https://kandian.wkandian.com/v5/Sousuo/playStart.json 重写目标 zqssz.js
 hostname = kandian.wkandian.com
 
  [Script]
- cron "36 8 * * *" script-path=zq_wakeup.js, tag=搜索赚
+ cron "36 8 * * *" script-path=zqssz.js, tag=搜索赚
 */
 const $ = new Env("中青看点搜索赚");
 const notify = $.isNode() ? require('./sendNotify') : '';
