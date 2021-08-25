@@ -1,7 +1,7 @@
 /*
 晶彩自动提现 jc_withdraw.js，
 调用jc_cookie,jc_withdraw,jc_cash
-赞赏:邀请码54870223
+
 脚本地址：
 https://raw.githubusercontent.com/feverrun/yd/master/jc_withdraw.js
 定时确保在每日首次火爆转发之后（jc_share.js），一天一次
@@ -20,6 +20,9 @@ https://ant.xunsl.com/v5/wechat/withdraw2.json 重写目标 https://raw.githubus
 3.export jc_cash="0.3"或者export jc_cash="30"，不填默认0.3
 4.多账号用户抓包jc_withdraw时需要与jc_cookie账号顺序一致
 5.jc_withdraw务必与jc_cash金额一致，即修改jc_withdraw时也要修改jc_cash
+
+ [Script]
+ cron "20 11 * * *" script-path=jc_withdraw.js, tag=晶彩看点提现
 */
 
 const $ = new Env("晶彩看点提现");

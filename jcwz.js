@@ -10,6 +10,9 @@ https://ant.xunsl.com/v5/article/info.json 重写目标 jcwz.js
 https://ant.xunsl.com/v5/user/stay.json 重写目标 jcwz.js
 [MITM]
 hostname = ant.xunsl.com
+
+ [Script]
+ cron "10 7,12,18 * * *" script-path=jcwz.js, tag=晶彩看点阅读文章
 */
 
 const $ = new Env("晶彩看点阅读文章");

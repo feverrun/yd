@@ -1,4 +1,8 @@
+/*
 
+ [Script]
+ cron "10 21 * * *" script-path=jc_Adv_video.js, tag=晶彩看点福利视频
+ */
 
 const $ = new Env("晶彩看点福利视频");
 const notify = $.isNode() ? require('./sendNotify') : '';

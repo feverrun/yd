@@ -2,14 +2,11 @@
 feverrun
 
 软件名称：晶彩看点
-赞赏:邀请码54870223
-万分感谢！！
-
-
 
 转盘抽奖，使用jc_cookie
 
-
+ [Script]
+ cron "17 5 * * *" script-path=jc_Rotary.js, tag=晶彩看点大转盘抽奖
  */
 
 const $ = new Env("晶彩看点大转盘抽奖");

@@ -2,16 +2,14 @@
 feverrun
 
 软件名称：晶彩看点
-赞赏:邀请码54870223
-
-万分感谢！！
-
 [rewrite_local]
-
 #晶彩看点每日收益查询
 https://ant.xunsl.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/jc_today_score.js
 [MITM]
 hostname = ant.xunsl.com
+
+ [Script]
+ cron "15 23 * * *" script-path=jc_today_score.js, tag=晶彩看点收益统计
 */
 
 const $ = new Env("晶彩看点收益统计");

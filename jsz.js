@@ -30,8 +30,10 @@ hostname = hh.102727.com
 
 收益：只看文章的话，跑满每日12000金币（1.2元），被限制阅读另说
 每满4000金币（4毛）微信自动提现
-
+ [Script]
+ cron "10 8 * * *" script-path=jsz.js, tag=金手指阅读
 */
+
 // */10 * * * * https://raw.githubusercontent.com/feverrun/yd/master/jsz.js
 
 

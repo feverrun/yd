@@ -1,3 +1,8 @@
+/*
+ [Script]
+ cron "30 22 * * *" script-path=jcbox.js, tag=晶彩看点任务宝箱领取
+ */
+
 const $ = new Env('晶彩看点任务宝箱领取');
 let jcboxbody= $.isNode() ? (process.env.jcboxbody ? process.env.jcboxbody : "") : ($.getdata('jcboxbody') ? $.getdata('jcboxbody') : "")
 let jcboxbodyArr = []

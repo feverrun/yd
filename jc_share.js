@@ -2,16 +2,15 @@
 feverrun
 
 软件名称：晶彩看点
-赞赏:邀请码54870223
-
-万分感谢！！
 
 [rewrite_local]
-
 #火爆转发
 https://ant.xunsl.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/jc_share.js
 [MITM]
 hostname = ant.xunsl.com
+
+ [Script]
+ cron "10 6,12,18 * * *" script-path=jc_share.js, tag=晶彩看点火爆转发
 */
 
 const $ = new Env("晶彩看点火爆转发");

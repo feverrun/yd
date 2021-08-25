@@ -2,16 +2,14 @@
 feverrun
 
 软件名称：晶彩看点
-赞赏:邀请码54870223
-
-万分感谢！！
-
 [rewrite_local]
-
 #看看赚
 https://ant.xunsl.com/v5/nameless/adlickstart.json 重写目标 https://raw.githubusercontent.com/feverrun/yd/master/jckkz.js
 [MITM]
 hostname = ant.xunsl.com
+
+ [Script]
+ cron "30 9 * * *" script-path=jckkz.js, tag=晶彩看点看看赚
 */
 const $ = new Env("晶彩看点看看赚");
 const notify = $.isNode() ? require('./sendNotify') : '';
