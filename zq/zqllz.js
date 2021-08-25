@@ -1,17 +1,13 @@
 /*
 shaolin-kongfu
 
-软件名称：中青看点
-赞赏:邀请码57984759
-
-万分感谢！！
-
-[rewrite_local]
-
 #浏览赚
-https://kandian.wkandian.com/v5/task/browse_start.json 重写目标 https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqllz.js
+https://kandian.wkandian.com/v5/task/browse_start.json 重写目标 zqllz.js
 [MITM]
 hostname = kandian.wkandian.com
+
+ [Script]
+ cron "35 7 * * *" script-path=zq_wakeup.js, tag=中青浏览赚
 */
 const $ = new Env("中青看点浏览赚");
 const notify = $.isNode() ? require('./sendNotify') : '';

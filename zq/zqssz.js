@@ -2,16 +2,14 @@
 shaolin-kongfu
 
 软件名称：中青看点
-赞赏:邀请码57984759
-
-万分感谢！！
-
-[rewrite_local]
 
 #搜索赚
-https://kandian.wkandian.com/v5/Sousuo/playStart.json 重写目标 https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/zq/zqllz.js
+https://kandian.wkandian.com/v5/Sousuo/playStart.json 重写目标 zqssz.js
 [MITM]
 hostname = kandian.wkandian.com
+
+ [Script]
+ cron "36 8 * * *" script-path=zq_wakeup.js, tag=搜索赚
 */
 const $ = new Env("中青看点搜索赚");
 const notify = $.isNode() ? require('./sendNotify') : '';
