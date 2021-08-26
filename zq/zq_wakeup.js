@@ -7,34 +7,33 @@ const $ = new Env("中青看点打卡赚钱");
 const notify = $.isNode() ? require('./sendNotify') : '';
 message = ""
 let zq_cookie= $.isNode() ? (process.env.zq_cookie ? process.env.zq_cookie : "") : ($.getdata('zq_cookie') ? $.getdata('zq_cookie') : "")
-let zq_cookieArr = []
-let zq_cookies = ""
+let zq_cookieArr = [];
+let zq_cookies = "";
 var myDate = new Date();
 var hour=myDate.getHours();
 
-if (zq_cookie) {
-    if (zq_cookie.indexOf("@") == -1 && zq_cookie.indexOf("@") == -1) {
-        zq_cookieArr.push(zq_cookie)
-    } else if (zq_cookie.indexOf("@") > -1) {
-        zq_cookies = zq_cookie.split("@")
-    } else if (process.env.zq_cookie && process.env.zq_cookie.indexOf('@') > -1) {
-        zq_cookieArr = process.env.zq_cookie.split('@');
-        console.log(`您选择的是用"@"隔开\n`)
-    }
-} else {
-    var fs = require("fs");
-    zq_cookie = fs.readFileSync("zq_cookie.txt", "utf8");
-    if (zq_cookie !== `undefined`) {
-        zq_cookies = zq_cookie.split("\n");
-    } else {
-        $.msg($.name, '【提示】进入点击右下角"任务图标"，再跑一次脚本', '不知道说啥好', {
-            "open-url": "给您劈个叉吧"
-        });
-        $.done()
-    }
+if (!zq_cookie) {
+    $.msg($.name, '【提示】进入点击右下角"任务图标"，再跑一次脚本', '不知道说啥好', {
+        "open-url": "给您劈个叉吧"
+    });
+    $.done()
 }
+else if (zq_cookie.indexOf("@") == -1) {
+    zq_cookieArr.push(zq_cookie)
+}
+else if (zq_cookie.indexOf("@") > -1) {
+    zq_cookies = zq_cookie.split("@")
+}
+else if (process.env.zq_cookie && process.env.zq_cookie.indexOf('@') > -1) {
+    zq_cookieArr = process.env.zq_cookie.split('@');
+    console.log(`您选择的是用"@"隔开\n`)
+}
+else {
+    zq_cookies = [process.env.zq_cookie]
+};
+
 Object.keys(zq_cookies).forEach((item) => {
-    if (zq_cookies[item] && !zq_cookies[item].startsWith("#")) {
+    if (zq_cookies[item]) {
         zq_cookieArr.push(zq_cookies[item])
     }
 })
@@ -53,7 +52,7 @@ Object.keys(zq_cookies).forEach((item) => {
             console.log(`--------第 ${k + 1} 个账号早起打卡报名中--------\n`)
             await signup()
             console.log("\n\n")
-            if ($.message.length !== 'undefined' && $.message.length != 0) {
+            if ($.message.length != 0) {
                 message += "账号" + (k + 1) + "：  " + $.message + " \n"
             }
             await $.wait(3000)
@@ -62,17 +61,17 @@ Object.keys(zq_cookies).forEach((item) => {
             console.log(`--------第 ${k + 1} 个账号早起打卡中--------\n`)
             await wakeup()
             console.log("\n\n")
-            if ($.message.length !== 'undefined' && $.message.length != 0) {
+            if ($.message.length != 0) {
                 message += "账号" + (k + 1) + "：  " + $.message + " \n"
             }
             await $.wait(3000)
 
         }
         if (message.length != 0) {
-            await notify ? notify.sendNotify("中青看点打卡", `${message}\n\n 吹水群：https://t.me/ShaolinTemple2`) :
-                $.msg($.name, "中青看点打卡", `${message}\n\n 吹水群：https://t.me/ShaolinTemple2`);
+            await notify ? notify.sendNotify("中青看点打卡", `${message}\n\n`) :
+                $.msg($.name, "中青看点打卡", `${message}\n\n`);
         } else if ($.isNode()) {
-            await notify.sendNotify("中青看点打卡", `${message}\n\n 吹水群：https://t.me/ShaolinTemple2`);
+            await notify.sendNotify("中青看点打卡", `${message}\n\n`);
         }
     }
 })()
