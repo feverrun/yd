@@ -2,9 +2,7 @@
 feverrun
 
 软件名称：中青看点
-中青看点福利视频
 使用zq_cookie
-
 脚本地址：
 https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_Adv_video.js
 定时确保在jcbox脚本运行之前完成即可，一天一次
@@ -16,89 +14,83 @@ https://raw.githubusercontent.com/feverrun/yd/master/zq/zq_Adv_video.js
 const $ = new Env("中青看点福利视频");
 const notify = $.isNode() ? require('./sendNotify') : '';
 message = ""
-let zq_cookie= $.isNode() ? (process.env.zq_cookie ? process.env.zq_cookie : "") : ($.getdata('zq_cookie') ? $.getdata('zq_cookie') : "")
+let zq_cookie = $.isNode() ? (process.env.zq_cookie ? process.env.zq_cookie : "") : ($.getdata('zq_cookie') ? $.getdata('zq_cookie') : "")
 let zq_cookieArr = []
 let zq_cookies = ""
 
 if (!zq_cookie) {
-     $.msg($.name, '【提示】进入点击右下角"任务图标"，再跑一次脚本', '不知道说啥好', {
-         "open-url": "给您劈个叉吧"
-     });
-     $.done()
- }
- else if (zq_cookie.indexOf("@") == -1 && zq_cookie.indexOf("@") == -1) {
-            zq_cookieArr.push(zq_cookie)
- }
- else if (zq_cookie.indexOf("@") > -1) {
-            zq_cookies = zq_cookie.split("@")
- }
- else if (process.env.zq_cookie && process.env.zq_cookie.indexOf('@') > -1) {
-            zq_cookieArr = process.env.zq_cookie.split('@');
-            console.log(`您选择的是用"@"隔开\n`)
- }
- else {
-            zq_cookies = [process.env.zq_cookie]
- };
-    Object.keys(zq_cookies).forEach((item) => {
-        if (zq_cookies[item]) {
-            zq_cookieArr.push(zq_cookies[item])
-        }
-    })
+    $.msg($.name, '【提示】进入点击右下角"任务图标"，再跑一次脚本', '不知道说啥好', {
+        "open-url": "给您劈个叉吧"
+    });
+    $.done()
+} else if (zq_cookie.indexOf("@") == -1 && zq_cookie.indexOf("@") == -1) {
+    zq_cookieArr.push(zq_cookie)
+} else if (zq_cookie.indexOf("@") > -1) {
+    zq_cookies = zq_cookie.split("@")
+} else if (process.env.zq_cookie && process.env.zq_cookie.indexOf('@') > -1) {
+    zq_cookieArr = process.env.zq_cookie.split('@');
+    console.log(`您选择的是用"@"隔开\n`)
+} else {
+    zq_cookies = [process.env.zq_cookie]
+}
 
-
-
+Object.keys(zq_cookies).forEach((item) => {
+    if (zq_cookies[item]) {
+        zq_cookieArr.push(zq_cookies[item])
+    }
+})
 
 !(async () => {
-        console.log(`共${zq_cookieArr.length}个cookie`)
-	        for (let k = 0; k < zq_cookieArr.length; k++) {
-                $.message = ""
-                bodyVal = zq_cookieArr[k]
-                var time1 = Date.parse( new Date() ).toString();
-                time1 = time1.substr(0,10);
-                zq_cookie1= time1 + '&' + bodyVal
-                //待处理cookie
-                console.log(`${zq_cookie1}`)
-                console.log(`--------第 ${k + 1} 个账号观看福利视频中--------\n`)
-		        for (let j =0; j<6;j++){
-			        console.log(`--------第 ${j + 1} 次观看福利视频中--------\n`)
-                	await video(zq_cookie1)
-			        console.log("等待30秒")
-                	await $.wait(30000);
-			        console.log("\n\n")
-		}
-                console.log("\n\n")
-            }
+    console.log(`共${zq_cookieArr.length}个cookie`)
+    for (let k = 0; k < zq_cookieArr.length; k++) {
+        $.message = ""
+        bodyVal = zq_cookieArr[k]
+        var time1 = Date.parse(new Date()).toString();
+        time1 = time1.substr(0, 10);
+        zq_cookie1 = time1 + '&' + bodyVal
+        //待处理cookie
+        console.log(`${zq_cookie1}`)
+        console.log(`--------第 ${k + 1} 个账号观看福利视频中--------\n`)
+        for (let j = 0; j < 6; j++) {
+            console.log(`--------第 ${j + 1} 次观看福利视频中--------\n`)
+            await video(zq_cookie1)
+            console.log("等待30秒")
+            await $.wait(30000);
+            console.log("\n\n")
+        }
+        console.log("\n\n")
+    }
 
-     })()
+})()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
 
 
-function video(zq_cookie1,timeout = 0) {
+function video(zq_cookie1, timeout = 0) {
     return new Promise((resolve) => {
 
         let url = {
-            url : 'https://kandian.wkandian.com/V17/NewTask/recordNum.json?'+ zq_cookie1,
-            headers : {
-    'Host': 'kandian.wkandian.com',
-    'Connection': 'Keep-Alive',
-    'Accept-Encoding': 'gzip',
-    'User-Agent': 'okhttp/3.12.2'
-},
-            }
+            url: 'https://kandian.wkandian.com/V17/NewTask/recordNum.json?' + zq_cookie1,
+            headers: {
+                'Host': 'kandian.wkandian.com',
+                'Connection': 'Keep-Alive',
+                'Accept-Encoding': 'gzip',
+                'User-Agent': 'okhttp/3.12.2'
+            },
+        }
         $.get(url, async (err, resp, data) => {
             try {
                 const result = JSON.parse(data)
-                if(result.success === true){
-                    console.log('\n福利视频:'+result.message)
-                }else{
-                     console.log(result)
+                if (result.success === true) {
+                    console.log('\n福利视频:' + result.message)
+                } else {
+                    console.log(result)
                 }
             } catch (e) {
             } finally {
                 resolve()
             }
-            },timeout)
+        }, timeout)
     })
 }
 
