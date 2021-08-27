@@ -9,12 +9,12 @@ cron 建议2小时运行一次  8~23点之间运行即可
 
 圈x  其他自己编写
 [rewrite_local]
-https://api.st615.com/v1/user/info? url script-request-header https://raw.githubusercontent.com/xl2101200/-/main/jztt.js
+https://api.st615.com/v1/user/info? url script-request-header jztt.js
 
 [mitm]
 api.st615.com
 
-
+cron 25 7-20/2 * * *
 */
 
 GXRZ = 'Tom 8.26修复版'
