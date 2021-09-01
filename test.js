@@ -12,7 +12,7 @@ if(url.indexOf("intervalAward")>=0) {
     if (kkdheader) $.setdata(kkdheader,`kkdheader${$.idx}`)
     $.log(`[${$.jsname}] 获取kkdheader请求: 成功,kkdheader: ${kkdheader}`)
     $.msg(`获取kkdheader: 成功🎉`, ``)
-    const kkdcookie = $request.headers['Cookie']
+    const kkdcookie = url.headers['Cookie']
     if (kkdcookie) $.setdata(kkdcookie,`kkdcookie${$.idx}`)
     $.log(`[${$.jsname}] 获取kkdcookie请求: 成功,kkdcookie: ${kkdcookie}`)
     $.msg(`获取kkdcookie: 成功🎉`, ``)
