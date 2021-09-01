@@ -144,6 +144,7 @@ if ($.isNode()) {
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
+
 function GetCookie() {
     if($request&&$request.url.indexOf("intervalAward")>=0) {
         const kkdheader = $request.url.split(`?`)[1]
