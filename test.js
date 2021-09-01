@@ -3,7 +3,17 @@ const $ = new Env('test')
 $.idx = ($.idx = ($.getval("kkdcount") || "1") - 1) > 0 ? `${$.idx + 1}` : ""; // 账号扩展字符
 
 
-const url = "https://api.yuncheapp.cn/pearl-incentive/api/v1/task/intervalAward/receive?app=pearl&cc=cn&ss=PHVua25vd24gc3NpZD4%3D%0A&kpf=ANDROID&os=10&ch=ANDR_OPPO%2C1&nt=WIFI&isp=&kpn=pearl&abi=arm64&_body=949c229eb336cee9e1b633517c2e773d7b4665682167af83bff634f1414fc9ce&__clientSign2=q26E7QGeqGEwYzFkNGI0ZWNmYWI0Nzc5N2E0NDQ3NDZmZGRhOWI3MzllMmE3MDNmNTg1NTViNGQ&fr=ANDROID&ve=3.38.2.752&egid=DFPBDD3A3774B91367D877FB2C86B8E59A56727716E560FC3D23E8DDA6370FE3&dpbs=3sCt3iAAMzE2OTAyNDgxAM8HAIinM9cErUYiOhAAAABftxaxE4fOd2nhT9x6kVZA%0A&oc=OPPO&od=0990A8DEE8484D29A1F033DCEFB178E3e82dce91adda643738be64a5c1dbd373&md=PCCM00&lan=zh-cn&mi=&apiLevel=29&did=ANDROID_9b4b289931b23b10&sr=1080*2340"
+const url = "https://api.yuncheapp.cn/pearl-incentive/api/v1/task/intervalAward/receive?app=pearl&cc=cn&ss=PHVua25vd24gc3NpZD4%3D%0A&kpf=ANDROID&os=10&ch=ANDR_OPPO%2C1&nt=WIFI&isp=&kpn=pearl&abi=arm64&_body=949c229eb336cee9e1b633517c2e773d7b4665682167af83bff634f1414fc9ce&__clientSign2=q26E7QGeqGEwYzFkNGI0ZWNmYWI0Nzc5N2E0NDQ3NDZmZGRhOWI3MzllMmE3MDNmNTg1NTViNGQ&fr=ANDROID&ve=3.38.2.752&egid=DFPBDD3A3774B91367D877FB2C86B8E59A56727716E560FC3D23E8DDA6370FE3&dpbs=3sCt3iAAMzE2OTAyNDgxAM8HAIinM9cErUYiOhAAAABftxaxE4fOd2nhT9x6kVZA%0A&oc=OPPO&od=0990A8DEE8484D29A1F033DCEFB178E3e82dce91adda643738be64a5c1dbd373&md=PCCM00&lan=zh-cn&mi=&apiLevel=29&did=ANDROID_9b4b289931b23b10&sr=1080*2340 HTTP/1.1\n" +
+    "Accept-Language: zh-cn\n" +
+    "Connection: keep-alive\n" +
+    "Cookie: pearl.api_st=CgxwZWFybC5hcGkuc3QSgAGGQ3mBXJdQ8oLspm0zwsBWcBp2L6MK14QjhYJbfD5gLqFygDNaCaaCE_1D9Pf-kP8y4jWUXaFR4PpGVcdmsrFO6jyCFqdZTAmpkbzz4E6NkMNEOoVRXzYF8xgwKDcyunS3ZcoZIngT_DM4Nh3oUXJORXmTlo8HJy9H_BNFcfU1mRoSPscnzpvh0xnqB1z9n9SxQvlTIiBXumNeeKXoYmH7i7Mhemr6cl6wsBaEiJR7w7ypzj1F-ygFMAE; userId=76410579; did=ANDROID_9b4b289931b23b10\n" +
+    "rbe-ty: k1\n" +
+    "User-Agent: pearl-android\n" +
+    "X-REQUESTID: 478762101\n" +
+    "Content-Type: application/json; charset=UTF-8\n" +
+    "Content-Length: 2\n" +
+    "Host: api.yuncheapp.cn\n" +
+    "Accept-Encoding: gzip"
 const url1 = "https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/get?app=pearl&cc=cn&ss=PHVua25vd24gc3NpZD4%3D%0A&kpf=ANDROID&os=10&ch=ANDR_OPPO%2C1&nt=WIFI&isp=&kpn=pearl&abi=arm64&__clientSign2=8Fmv1QGeqGBkZWNmOTk5YzFkNzk5NWFiYWM5Njk1OTRkZTBhODZkOTAwZjhhMmVkOGE4Nzg5OWY&fr=ANDROID&ve=3.38.2.752&egid=DFPBDD3A3774B91367D877FB2C86B8E59A56727716E560FC3D23E8DDA6370FE3&dpbs=3sCt3iAAMzE2OTAyNDg2AM8HAIinM9cE4T75OBAAAABX8lsqVg5lkBJNjrXn4Wgo%0A&oc=OPPO&od=0990A8DEE8484D29A1F033DCEFB178E3e82dce91adda643738be64a5c1dbd373&md=PCCM00&noticeIsSet=false&lan=zh-cn&mi=&apiLevel=29&did=ANDROID_9b4b289931b23b10&sr=1080*2340";
 
 
