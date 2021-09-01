@@ -67,7 +67,7 @@ if ($.isNode()) {
         kkdheader = process.env.KKDHEADER.split('\n');
         console.log(`您选择的是用换行隔开\n`)
     } else {
-        kkdheader = process.env.KKDHEADER.split()
+        kkdheader = [process.env.KKDHEADER]//process.env.KKDHEADER.split()
     };
     if (process.env. KKDCOOKIE&& process.env.KKDCOOKIE.indexOf('#') > -1) {
         kkdcookie = process.env.KKDCOOKIE.split('#');
