@@ -110,7 +110,8 @@ function GetCookie() {
 async function checkin() {
     return new Promise((resolve) => {
         let checkin_url = {
-            url: `https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/checkin`,
+            // url: `https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/checkin`,
+            url: `https://node.52tt.com/activity-production/checkin-30day-new91/activity.Checkin/init`,
             headers: {
                 'Accept': '*/*',
                 'Accept-Encoding': 'gzip,deflate,br',
@@ -126,9 +127,7 @@ async function checkin() {
         }
         $.post(checkin_url, async (error, response, data) => {
             try {
-                console.log(data)
                 const result = JSON.parse(data)
-                if (logs) $.log(data)
                 if (result.code == 0) {
                     for (let i = 0; i < 29; i++) {
                         let day = result.data.record.i == 0 ? (i - 1) : i
