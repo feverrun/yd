@@ -233,11 +233,11 @@ function signin() {
         let signinurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/add?${kkdsign}`,
             headers: {
-                Cookie: kkdcookie,
+                Cookie: `${kkdcookie}`,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
+                'User-Agent': 'pearl-android'
             },
             body:'{}'
         }
