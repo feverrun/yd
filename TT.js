@@ -6,7 +6,7 @@ hostname = node.52tt.com
 
 https://node.52tt.com/activity-production/checkin-30day-new91/activity.Checkin/init
 
-cron 56 5,7 * * *
+cron "56 5,7 * * *"
 */
 
 const $ = new Env('TT语音')
