@@ -204,7 +204,7 @@ function userinfo() {
         let userinfourl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/user/tabV2?${kkdheader}`,
             headers: {
-                'Cookie': `${kkdcookie}`,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
@@ -234,13 +234,13 @@ function signin() {
         let signinurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/add?${kkdsign}`,
             headers: {
-                'Cookie': `${kkdcookie}`,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
                 'User-Agent': 'pearl-android'
             },
-            //body:'{}'
+            body:'{}'
         }
         $.get(signinurl,(error, response, data) =>{
             console.log(data);
