@@ -1,12 +1,10 @@
 /*
-转载留个名字，谢谢
 #打卡一次获取ck成功
 
 [mitm]
 hostname = node.52tt.com
 
-#loon
-http-request https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/checkin script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/TT.js, requires-body=true, timeout=10, tag=TT语音
+https://node.52tt.com/activity-production/checkin-30day-new91/activity.Checkin/init
 
 */
 
