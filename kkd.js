@@ -261,7 +261,7 @@ function signin() {
 function lotteryTable() {
     return new Promise((resolve, reject) => {
         let lotteryTableurl ={
-            url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/lotteryTable/drawV2?app=pearl&cc=cn&ss=PHVua25vd24gc3NpZD4%3D%0A&kpf=ANDROID&os=10&ch=ANDR_OPPO%2C1&nt=WIFI&isp=&kpn=pearl&abi=arm64&_body=b5324207a20b070b7130aa17c60e73cb4bf78a51ae1b1a9696e9204a424d0d13&__clientSign2=_Yu_lgGerFMwMzEyNDQ0MWZmZDA0MjBlNjI0YjQ4NDkxNzk3MjM1NWY3MzA2MDMwNTc1YTU0NDI&fr=ANDROID&ve=3.38.2.752&egid=DFPBDD3A3774B91367D877FB2C86B8E59A56727716E560FC3D23E8DDA6370FE3&dpbs=3sCt3iAAMzE3MDY1OTkxAM8HAIinM9cE0sXCphAAAABswL7tODhOtWCtUXeYT-XD%0A&oc=OPPO&od=0990A8DEE8484D29A1F033DCEFB178E3e82dce91adda643738be64a5c1dbd373&md=PCCM00&lan=zh-cn&mi=&apiLevel=29&did=ANDROID_9b4b289931b23b10&sr=1080*2340`,
+            url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/lotteryTable/drawV2?${kkdheader}`,
             headers: {
                 'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
@@ -406,7 +406,7 @@ function giftRain_getcoins() {
 function lotteryTable1() {
     return new Promise((resolve, reject) => {
         let lotteryTableurl ={
-            url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/lotteryTable/drawV2?app=pearl&cc=cn&ss=PHVua25vd24gc3NpZD4%3D%0A&kpf=ANDROID&os=10&ch=ANDR_OPPO%2C1&nt=WIFI&isp=&kpn=pearl&abi=arm64&_body=b5324207a20b070b7130aa17c60e73cb4bf78a51ae1b1a9696e9204a424d0d13&__clientSign2=_Yu_lgGerFMwMzEyNDQ0MWZmZDA0MjBlNjI0YjQ4NDkxNzk3MjM1NWY3MzA2MDMwNTc1YTU0NDI&fr=ANDROID&ve=3.38.2.752&egid=DFPBDD3A3774B91367D877FB2C86B8E59A56727716E560FC3D23E8DDA6370FE3&dpbs=3sCt3iAAMzE3MDY1OTkxAM8HAIinM9cE0sXCphAAAABswL7tODhOtWCtUXeYT-XD%0A&oc=OPPO&od=0990A8DEE8484D29A1F033DCEFB178E3e82dce91adda643738be64a5c1dbd373&md=PCCM00&lan=zh-cn&mi=&apiLevel=29&did=ANDROID_9b4b289931b23b10&sr=1080*2340`,
+            url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/lotteryTable/drawV2?${kkdheader}`,
             headers: {
                 'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
