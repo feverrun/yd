@@ -21,8 +21,8 @@ hostname = api.yuncheapp.cn
 #圈x
 
 #loon
-http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/intervalAward\/receive script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/kkd.js, requires-body=true, timeout=10, tag=快看点cookie
-http-request ^https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/* script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/kkd.js, requires-body=true, timeout=10, tag=快看点kkdsign
+http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/intervalAward\/receive kkd.js, requires-body=true, timeout=10, tag=快看点cookie
+http-request ^https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/* kkd.js, requires-body=true, timeout=10, tag=快看点kkdsign
 
 */
 const $ = new Env('快看点')
@@ -202,7 +202,7 @@ function invitation() {
 function userinfo() {
     return new Promise((resolve, reject) => {
         let userinfourl ={
-            url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/user/tabV2?app=pearl&cc=cn&ss=PHVua25vd24gc3NpZD4%3D%0A&kpf=ANDROID&os=10&ch=ANDR_OPPO%2C1&nt=WIFI&isp=&kpn=pearl&abi=arm64&_body=cda6e07d2d5ecb8a1a7c480c9c92c33df705e8c45dbe863292ecde68f9ed035a&__clientSign2=hnXjCAGeq_I3YzZkM2IzZTllM2U4Mzc3MDMzNDM3MzY5NjI2ODIzM2M2NjAxZjRmMjgyNTJiM2Q&fr=ANDROID&ve=3.38.2.752&egid=DFPBDD3A3774B91367D877FB2C86B8E59A56727716E560FC3D23E8DDA6370FE3&dpbs=3sCt3iAAMzE3MDY0ODMyAM8HAIinM9cEjZLYZRAAAADZRSPcbs0ngYtekdZZavVf%0A&oc=OPPO&od=0990A8DEE8484D29A1F033DCEFB178E3e82dce91adda643738be64a5c1dbd373&md=PCCM00&lan=zh-cn&mi=&apiLevel=29&did=ANDROID_9b4b289931b23b10&sr=1080*2340`,
+            url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/user/tabV2?${kkdsign}`,
             headers: {
                 'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
