@@ -213,7 +213,7 @@ function userinfo() {
             body:'{"permissionOK":false,"taskVersion":0,"installedKs":true,"signInCalendar":false,"useNewWelfare":1,"pushOpened":false,"welfareUIStyle":1}'
         }
         $.post(userinfourl,(error, response, data) =>{
-            console.log(data);
+            // console.log(data);
             const result = JSON.parse(data)
             if(logs) $.log(data)
             if(result.message == 'success') {
@@ -230,6 +230,7 @@ function userinfo() {
 //signin
 function signin() {
     return new Promise((resolve, reject) => {
+        console.log(`${kkdsign}`);
         let signinurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/add?${kkdsign}`,
             headers: {
