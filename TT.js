@@ -126,6 +126,7 @@ async function checkin() {
         }
         $.post(checkin_url, async (error, response, data) => {
             try {
+                console.log(data)
                 const result = JSON.parse(data)
                 if (logs) $.log(data)
                 if (result.code == 0) {
