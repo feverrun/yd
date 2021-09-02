@@ -202,7 +202,7 @@ function invitation() {
 function userinfo() {
     return new Promise((resolve, reject) => {
         let userinfourl ={
-            url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/user/tabV2?${kkdsign}`,
+            url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/user/tabV2?${kkdheader}`,
             headers: {
                 'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
