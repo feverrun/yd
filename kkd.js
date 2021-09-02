@@ -230,7 +230,7 @@ function userinfo() {
 //signin
 function signin() {
     return new Promise((resolve, reject) => {
-        console.log(`${kkdsign}`);
+        // console.log(`${kkdsign}`);
         let signinurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/add?${kkdsign}`,
             headers: {
@@ -240,7 +240,7 @@ function signin() {
                 'Host': 'api.yuncheapp.cn',
                 'User-Agent': 'pearl-android'
             },
-            body:'{}'
+            // body:'{}'
         }
         $.get(signinurl,(error, response, data) =>{
             console.log(data);
