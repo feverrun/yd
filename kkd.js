@@ -184,7 +184,7 @@ function invitation() {
         let invitatonurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/task/invite/verify?${kkdheader}`,
             headers: {
-                Cookie: kkdcookie,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
@@ -204,7 +204,7 @@ function userinfo() {
         let userinfourl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/user/tabV2?${kkdheader}`,
             headers: {
-                Cookie: `${kkdcookie}`,
+                'Cookie': `${kkdcookie}`,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
@@ -234,13 +234,13 @@ function signin() {
         let signinurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/add?${kkdsign}`,
             headers: {
-                Cookie: `${kkdcookie}`,
+                'Cookie': `${kkdcookie}`,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
                 'User-Agent': 'pearl-android'
             },
-            body:'{}'
+            //body:'{}'
         }
         $.get(signinurl,(error, response, data) =>{
             console.log(data);
@@ -263,7 +263,7 @@ function lotteryTable() {
         let lotteryTableurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/lotteryTable/drawV2?${kkdheader}`,
             headers: {
-                Cookie: kkdcookie,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
@@ -297,7 +297,7 @@ function lotteryTable_getcoins() {
         let lotteryTable_getcoinsurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/ad/finish?${kkdheader}`,
             headers: {
-                Cookie: kkdcookie,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
@@ -325,7 +325,7 @@ function intervalAward() {
         let intervalAwardurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/task/intervalAward/receive?${kkdheader}`,
             headers: {
-                Cookie: kkdcookie,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
@@ -352,7 +352,7 @@ function giftRain() {
         let giftRainurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/giftRain/receive?${kkdheader}`,
             headers: {
-                Cookie: kkdcookie,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
@@ -381,7 +381,7 @@ function giftRain_getcoins() {
         let giftRain_getcoinsurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/ad/finish?${kkdheader}`,
             headers: {
-                Cookie: kkdcookie,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
@@ -408,7 +408,7 @@ function lotteryTable1() {
         let lotteryTableurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/lotteryTable/drawV2?${kkdheader}`,
             headers: {
-                Cookie: kkdcookie,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
@@ -439,7 +439,7 @@ function extra_getcoins() {
         let giftRain_getcoinsurl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/ad/finish?${kkdheader}`,
             headers: {
-                Cookie: kkdcookie,
+                'Cookie': kkdcookie,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
