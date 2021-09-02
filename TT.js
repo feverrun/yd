@@ -37,7 +37,6 @@ if (isGetCookie) {
     $.done()
 }
 if ($.isNode()) {
-    console.log('isNode');
     if (process.env.TTREFER && process.env.TTREFER.indexOf('#') > -1) {
         TTrefer = process.env.TTREFER.split('#');
         console.log(`您选择的是用"#"隔开\n`)
@@ -46,6 +45,7 @@ if ($.isNode()) {
         console.log(`您选择的是用换行隔开\n`)
     } else {
         TTrefer = process.env.TTREFER.split()
+        console.log(TTrefer);
     }
 
     if (process.env.TTBODY && process.env.TTBODY.indexOf('#') > -1) {
@@ -56,6 +56,7 @@ if ($.isNode()) {
         console.log(`您选择的是用换行隔开\n`)
     } else {
         TTbody = process.env.TTBODY.split()
+        console.log(TTbody);
     }
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
