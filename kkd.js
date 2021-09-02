@@ -31,9 +31,9 @@ $.idx = ($.idx = ($.getval("kkdcount") || "1") - 1) > 0 ? `${$.idx + 1}` : ""; /
 const kkdheaderArr=[]
 const kkdcookieArr=[]
 const kkdsignArr=[]
-let kkdheader = ''//$.getdata('kkdheader')
-let kkdcookie = ''//$.getdata('kkdcookie')
-let kkdsign = ''//$.getdata('kkdsign')
+let kkdheader = $.getdata('kkdheader')
+let kkdcookie = $.getdata('kkdcookie')
+let kkdsign = $.getdata('kkdsign')
 const logs = false //日志
 const invite = 1; //邀请码1为邀请
 let tz = ($.getval('tz') || '1');//通知
