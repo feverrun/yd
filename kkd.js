@@ -210,7 +210,7 @@ function userinfo() {
                 'Host': 'api.yuncheapp.cn',
                 'User-Agent': 'pearl-android'
             },
-            body:'{"permissionOK":false,"taskVersion":0,"installedKs":true,"signInCalendar":false,"useNewWelfare":1,"pushOpened":false,"welfareUIStyle":1}'
+            body:''
         }
         $.post(userinfourl,(error, response, data) =>{
             console.log(data);
