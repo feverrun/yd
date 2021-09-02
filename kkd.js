@@ -267,7 +267,7 @@ function lotteryTable() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
+                'User-Agent': 'pearl-android'
             },
             body:'{}'
         }
@@ -412,7 +412,7 @@ function lotteryTable1() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
+                'User-Agent': 'pearl-android'
             },
             body:'{}'
         }
