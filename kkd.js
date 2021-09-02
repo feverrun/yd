@@ -31,11 +31,11 @@ $.idx = ($.idx = ($.getval("kkdcount") || "1") - 1) > 0 ? `${$.idx + 1}` : ""; /
 const kkdheaderArr=[]
 const kkdcookieArr=[]
 const kkdsignArr=[]
-let kkdheader = $.getdata('kkdheader')
-let kkdcookie = $.getdata('kkdcookie')
-let kkdsign = $.getdata('kkdsign')
+let kkdheader = ''//$.getdata('kkdheader')
+let kkdcookie = ''//$.getdata('kkdcookie')
+let kkdsign = ''//$.getdata('kkdsign')
 const logs = false //日志
-const invite = 1; //邀请码1为邀请
+const invite = 0; //邀请码1为邀请
 let tz = ($.getval('tz') || '1');//通知
 const invited = '';
 let lTadlist = '15884282854261489762';
@@ -68,7 +68,6 @@ if ($.isNode()) {
         console.log(`您选择的是用换行隔开\n`)
     } else {
         kkdheader = process.env.KKDHEADER.split()
-        $.setdata('kkdheader', process.env.KKDHEADER)
     };
 
     if (process.env. KKDCOOKIE&& process.env.KKDCOOKIE.indexOf('#') > -1) {
@@ -78,7 +77,6 @@ if ($.isNode()) {
         kkdcookie = process.env.KKDCOOKIE.split('\n');
     } else  {
         kkdcookie = process.env.KKDCOOKIE.split()
-        $.setdata('kkdcookie', process.env.KKDCOOKIE)
     };
 
     if (process.env. KKDSIGN&& process.env.KKDSIGN.indexOf('#') > -1) {
@@ -88,7 +86,6 @@ if ($.isNode()) {
         kkdsign = process.env.KKDSIGN.split('\n');
     } else  {
         kkdsign = process.env.KKDSIGN.split()
-        $.setdata('kkdsign', process.env.KKDSIGN)
     };
 
 
@@ -193,7 +190,7 @@ function invitation() {
                 'Host': 'api.yuncheapp.cn',
                 'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
-            body:'{"code": "JFN4M3"}'
+            body:'{"code": "51ZFGU"}'
         }
         $.post(invitatonurl,(error, response, data) =>{
             const result = JSON.parse(data)
@@ -204,6 +201,7 @@ function invitation() {
 //个人信息
 function userinfo() {
     return new Promise((resolve, reject) => {
+        console.log(`${kkdheader}`);
         let userinfourl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/user/tabV2?${kkdheader}`,
             headers: {
@@ -211,9 +209,9 @@ function userinfo() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
+                'User-Agent': 'pearl-android'
             },
-            body:'{}'
+            body:'{"permissionOK":false,"taskVersion":0,"installedKs":true,"signInCalendar":false,"useNewWelfare":1,"pushOpened":false,"welfareUIStyle":1}'
         }
         $.post(userinfourl,(error, response, data) =>{
             const result = JSON.parse(data)
@@ -228,6 +226,7 @@ function userinfo() {
         })
     })
 }
+
 //signin
 function signin() {
     return new Promise((resolve, reject) => {
