@@ -37,6 +37,7 @@ if (isGetCookie) {
     $.done()
 }
 if ($.isNode()) {
+    console.log('isNode');
     if (process.env.TTREFER && process.env.TTREFER.indexOf('#') > -1) {
         TTrefer = process.env.TTREFER.split('#');
         console.log(`您选择的是用"#"隔开\n`)
@@ -69,8 +70,6 @@ if ($.isNode()) {
     }
 }
 !(async () => {
-    console.log(TTreferArr);
-    console.log(TTbodyArr);
     if (!TTreferArr[0] && !TTbodyArr[0]) {
         $.msg($.name, '【提示】请先获取TT语音一cookie')
         return;
