@@ -201,7 +201,6 @@ function invitation() {
 //个人信息
 function userinfo() {
     return new Promise((resolve, reject) => {
-        console.log(`${kkdheader}`);
         let userinfourl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/user/tabV2?${kkdheader}`,
             headers: {
@@ -214,6 +213,7 @@ function userinfo() {
             body:'{"permissionOK":false,"taskVersion":0,"installedKs":true,"signInCalendar":false,"useNewWelfare":1,"pushOpened":false,"welfareUIStyle":1}'
         }
         $.post(userinfourl,(error, response, data) =>{
+            console.log(data);
             const result = JSON.parse(data)
             if(logs) $.log(data)
             if(result.message == 'success') {
