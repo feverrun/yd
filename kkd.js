@@ -1,6 +1,4 @@
 /*
-羊毛很少、自己取舍，每天2-3毛，但是比较稳，没听说过封号，可能玩的人少，公司比较大（快手）阅读全是签名，这个脚本基于小bug用的签名随时可能失效
-
 目前包含：
 签到
 时段奖励
@@ -20,9 +18,11 @@ KKDSIGN-kkgsign
 
 [mitm]
 hostname = api.yuncheapp.cn
+#圈x
+
 #loon
-http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/intervalAward\/receive kkd.js, requires-body=true, timeout=10, tag=快看点cookie
-http-request ^https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/* kkd.js, requires-body=true, timeout=10, tag=快看点kkdsign
+http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/intervalAward\/receive script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/kkd.js, requires-body=true, timeout=10, tag=快看点cookie
+http-request ^https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/* script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/kkd.js, requires-body=true, timeout=10, tag=快看点kkdsign
 
 */
 const $ = new Env('快看点')
@@ -31,10 +31,9 @@ $.idx = ($.idx = ($.getval("kkdcount") || "1") - 1) > 0 ? `${$.idx + 1}` : ""; /
 const kkdheaderArr=[]
 const kkdcookieArr=[]
 const kkdsignArr=[]
-const user_agent='Mozilla/5.0 (Linux; Android 10; PCCM00 Build/QKQ1.191021.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/92.0.4515.159 Mobile Safari/537.36pearl-android'
-let kkdheader = $.getdata('kkdheader')
-let kkdcookie = $.getdata('kkdcookie')
-let kkdsign = $.getdata('kkdsign')
+let kkdheader = ''//$.getdata('kkdheader')
+let kkdcookie = ''//$.getdata('kkdcookie')
+let kkdsign = ''//$.getdata('kkdsign')
 const logs = false //日志
 const invite = 1; //邀请码1为邀请
 let tz = ($.getval('tz') || '1');//通知
@@ -51,13 +50,14 @@ if ($.isNode()) {
     hour = (new Date()).getHours();
     minute = (new Date()).getMinutes();
 }
-//CK运行
 
+//CK运行
 let isGetCookie = typeof $request !== 'undefined'
 if (isGetCookie) {
     GetCookie();
     $.done()
 }
+
 if ($.isNode()) {
     if (process.env.KKDHEADER && process.env.KKDHEADER.indexOf('#') > -1) {
         kkdheader = process.env.KKDHEADER.split('#');
@@ -69,6 +69,7 @@ if ($.isNode()) {
     } else {
         kkdheader = process.env.KKDHEADER.split()
     };
+
     if (process.env. KKDCOOKIE&& process.env.KKDCOOKIE.indexOf('#') > -1) {
         kkdcookie = process.env.KKDCOOKIE.split('#');
     }
@@ -77,6 +78,7 @@ if ($.isNode()) {
     } else  {
         kkdcookie = process.env.KKDCOOKIE.split()
     };
+
     if (process.env. KKDSIGN&& process.env.KKDSIGN.indexOf('#') > -1) {
         kkdsign = process.env.KKDSIGN.split('#');
     }
@@ -85,6 +87,7 @@ if ($.isNode()) {
     } else  {
         kkdsign = process.env.KKDSIGN.split()
     };
+
     Object.keys(kkdheader).forEach((item) => {
         if (kkdheader[item]) {
             kkdheaderArr.push(kkdheader[item])
@@ -100,6 +103,7 @@ if ($.isNode()) {
             kkdsignArr.push(kkdsign[item])
         }
     });
+
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
 } else {
@@ -113,6 +117,7 @@ if ($.isNode()) {
         kkdsignArr.push($.getdata(`kkdsign${i}`))
     }
 }
+
 !(async () => {
     if (!kkdcookieArr[0]) {
         $.msg($.name, '【提示】请先获取快看点一cookie')
@@ -144,7 +149,6 @@ if ($.isNode()) {
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
-
 function GetCookie() {
     if($request&&$request.url.indexOf("intervalAward")>=0) {
         const kkdheader = $request.url.split(`?`)[1]
@@ -183,7 +187,7 @@ function invitation() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body:'{"code": "JFN4M3"}'
         }
@@ -203,7 +207,7 @@ function userinfo() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body:'{}'
         }
@@ -230,7 +234,7 @@ function signin() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body:'{}'
         }
@@ -258,7 +262,7 @@ function lotteryTable() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body:'{}'
         }
@@ -292,7 +296,7 @@ function lotteryTable_getcoins() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body:`{"adPositionType":"LOTTERYTABLE_INCENTIVE","insertCnt":0,"adCodeId":"1300213002001","serverEcpm":0,"ttl":0,"requestCnt":0,"adProvider":"KS_NEW","adRet":true,"resultExpire":0,"keyString":"1300213002001KS_NEW","endAd":false,"requestStartTime":0,"adBizType":"LOTTERY_TABLE","renderType":0,"adToken":"","adLlsid":"${lTadlist}","isPreload":false,"adAward":0}`
         }
@@ -320,7 +324,7 @@ function intervalAward() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             }
         }
         $.post(intervalAwardurl,(error, response, data) =>{
@@ -347,7 +351,7 @@ function giftRain() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body:'{"coins":40}'
         }
@@ -376,7 +380,7 @@ function giftRain_getcoins() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body:`{"adPositionType":"GIFTRAIN_INCENTIVE","insertCnt":0,"adCodeId":"1300213002003","serverEcpm":0,"ttl":0,"requestCnt":0,"adProvider":"KS_NEW","adRet":true,"resultExpire":0,"keyString":"1300213002003KS_NEW","endAd":false,"requestStartTime":0,"renderType":0,"adToken":"","adLlsid":"${gRadlist}","isPreload":false,"adAward":0}`
         }
@@ -403,7 +407,7 @@ function lotteryTable1() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body:'{}'
         }
@@ -434,7 +438,7 @@ function extra_getcoins() {
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
-                'User-Agent': user_agent
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body:`{"adRet":true,"adCodeId":"1300213002001","adProvider":"KS_NEW","adLlsid":"${eXadlist}","adToken":"","adPositionType":"COIN_REWARD_INCENTIVE","adBizType":"COIN_REWARD"}`
         }
