@@ -239,6 +239,7 @@ function signin() {
             body:'{}'
         }
         $.get(signinurl,(error, response, data) =>{
+            console.log(data);
             const result = JSON.parse(data)
             if(logs) $.log(data)
             message += '📣签到\n'
