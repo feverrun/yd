@@ -6,7 +6,9 @@ hostname = node.52tt.com
 
 https://node.52tt.com/activity-production/checkin-30day-new91/activity.Checkin/init
 
-cron "56 5,7 * * *"
+[Script]
+ cron "56 5,7 * * *" script-path=TT.js, tag=TT语音
+
 */
 
 const $ = new Env('TT语音')
