@@ -205,7 +205,7 @@ function userinfo() {
         let userinfourl ={
             url: `https://api.yuncheapp.cn/pearl-incentive/api/v1/user/tabV2?${kkdheader}`,
             headers: {
-                Cookie: `${kkdheader}`,
+                Cookie: `${kkdcookie}`,
                 'Connection': 'keep-alive',
                 'Content-Type': 'application/json',
                 'Host': 'api.yuncheapp.cn',
