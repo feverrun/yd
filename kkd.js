@@ -68,6 +68,7 @@ if ($.isNode()) {
         console.log(`您选择的是用换行隔开\n`)
     } else {
         kkdheader = process.env.KKDHEADER.split()
+        $.setdata('kkdheader', process.env.KKDHEADER)
     };
 
     if (process.env. KKDCOOKIE&& process.env.KKDCOOKIE.indexOf('#') > -1) {
@@ -77,6 +78,7 @@ if ($.isNode()) {
         kkdcookie = process.env.KKDCOOKIE.split('\n');
     } else  {
         kkdcookie = process.env.KKDCOOKIE.split()
+        $.setdata('kkdcookie', process.env.KKDCOOKIE)
     };
 
     if (process.env. KKDSIGN&& process.env.KKDSIGN.indexOf('#') > -1) {
@@ -86,7 +88,9 @@ if ($.isNode()) {
         kkdsign = process.env.KKDSIGN.split('\n');
     } else  {
         kkdsign = process.env.KKDSIGN.split()
+        $.setdata('kkdsign', process.env.KKDSIGN)
     };
+
 
     Object.keys(kkdheader).forEach((item) => {
         if (kkdheader[item]) {
