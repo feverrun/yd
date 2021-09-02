@@ -213,7 +213,7 @@ function userinfo() {
             body:'{"permissionOK":false,"taskVersion":0,"installedKs":true,"signInCalendar":false,"useNewWelfare":1,"pushOpened":false,"welfareUIStyle":1}'
         }
         $.post(userinfourl,(error, response, data) =>{
-            // console.log(data);
+            console.log(data);
             const result = JSON.parse(data)
             if(logs) $.log(data)
             if(result.message == 'success') {
