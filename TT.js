@@ -112,7 +112,8 @@ async function checkin() {
     return new Promise((resolve) => {
         let checkin_url = {
             // url: `https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/checkin`,
-            url: `https://node.52tt.com/activity-production/checkin-30day-new91/activity.Checkin/init`,
+            // url: `https://node.52tt.com/activity-production/checkin-30day-new91/activity.Checkin/init`,
+            url: `https://node.52tt.com/activity-production/checkin-30day-new91/activity.Checkin/checkin`,
             headers: {
                 'Accept': '*/*',
                 'Accept-Encoding': 'gzip,deflate,br',
