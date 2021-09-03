@@ -9,6 +9,12 @@ const axios = require("axios");
 const timeAsync =  ms => new Promise(resolve => setTimeout(resolve, ms));
 let result = "【多看阅读每日任务】：";
 let duokan_cookie = process.env.DUOKAN_COOKIE ? process.env.DUOKAN_COOKIE : '';
+
+if(!duokan_cookie){
+    console.log('快把cookie找回来');
+    return;
+}
+
 //let number = 0;
 header = {
     headers: {
