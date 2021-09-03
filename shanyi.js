@@ -14,7 +14,7 @@ const shanyi_ua = 'shanyi/2.4.0(android;PCCM00;10)/72c72761cd514fc8a9f80a17321c3
 
 token = shanyi_token
 u = shanyi_u
-urlpara = "&v=1.0.0&app_version=2.1.0&client=" + shanyi_client
+urlpara = "&v=1.0.0&app_version=2.4.0&client=" + shanyi_client
 datapara = "&u=" + encodeURIComponent(u) + "&token=" + encodeURIComponent(token)
 
 function post(options) {
@@ -72,7 +72,7 @@ async function renwu() {
     let timelist = dataa.data.task_limit_time_list
     if (timelist.length > 0) {
         for (id of timelist) {
-            if (id.title.match(/观看/)) {
+            if (id.title.match(/观看15分钟/)) {
                 await task("阅读", "/?m=user&op=index&ac=add_user_play_time", "minute=" + jm(120) + "&gid=" + jm(id.game_id))
                 await sleep(60000)
             } else if (id.title.match(/收藏/)) {
@@ -117,7 +117,7 @@ async function shanyi() {
         return "token和u已失效或填写错误";
     } else {
         //默认填写我的邀请码
-        await task("填写邀请码 06721192", "/?m=user&op=activity&ac=use_invite_code", "code=" + jm('06721192'))
+        await task("填写邀请码 06721192", "/?m=user&op=activity&ac=use_invite_code", "code=" + jm(06721192))
         await task("每日签到", "/?m=user&op=check_in&ac=check_in", "")
         /* for(trigger=0;trigger<5;trigger++){
          await task("连续签到奖励", "/?m=user&op=check_in&ac=receive_monthly_bonus", "trigger="+jm(trigger))
