@@ -483,11 +483,6 @@ function getO() {
 }
 
 async function task() {
-    if(!duokan_cookie){
-        console.log('快把cookie找回来');
-        return;
-    }
-
     await info();
     await dailysign();
     await info();
