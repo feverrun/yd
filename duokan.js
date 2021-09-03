@@ -1,3 +1,8 @@
+/*
+[Script]
+cron "55 6 * * *"
+*/
+
 ids = [];
 const axios = require("axios");
 //axios.defaults.timeout = 1000;
