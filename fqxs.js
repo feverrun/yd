@@ -1,6 +1,4 @@
 /*
-转载留个名字，谢谢
-版本3.5.0
 #签到界面或者签到详情
 #读书任务可以完成，时长上传没做好，广告偶尔可以
 [mitm]
@@ -8,6 +6,8 @@ hostname = *.snssdk.com
 #圈x
 #loon
 http-request luckycat/novel/v1/task/sign_in/* script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/fqxs.js, requires-body=true, timeout=10, tag=🍅番茄小说
+[Script]
+cron "55 5 * * *"
 
 */
 const $ = new Env('🍅番茄小说')
@@ -105,6 +105,7 @@ function fqxsck() {
         $.msg(`fqxs${status}: 成功🎉`, ``)
     }
 }
+
 //task_list
 async function task_list(){
     return new Promise((resolve) => {
