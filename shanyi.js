@@ -117,7 +117,7 @@ async function shanyi() {
         return "token和u已失效或填写错误";
     } else {
         //默认填写我的邀请码
-        await task("填写邀请码 06721192", "/?m=user&op=activity&ac=use_invite_code", "code=" + jm('06721192'))
+        await task("填写邀请码 ", "/?m=user&op=activity&ac=use_invite_code", "code=" + jm(06721192))
         await task("每日签到", "/?m=user&op=check_in&ac=check_in", "")
         /* for(trigger=0;trigger<5;trigger++){
          await task("连续签到奖励", "/?m=user&op=check_in&ac=receive_monthly_bonus", "trigger="+jm(trigger))
