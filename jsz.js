@@ -1,8 +1,6 @@
 /*
 
 金银手指
-原作者：柠檬
-
 适配v2p和青龙，修复v2p运行偶现报错问题，需要依赖 crypto-js.js ，请将该文件放在脚本同级目录即可
 crypto-js 文件地址：https://raw.githubusercontent.com/feverrun/yd/master/crypto-js.js
 圈x请跑原作者脚本
@@ -10,7 +8,6 @@ crypto-js 文件地址：https://raw.githubusercontent.com/feverrun/yd/master/cr
 青龙抓包以下链接的header
 https://hh.102727.com/user/myInfo
 变量：jszhd
-
 
 v2p配置重写如下：
 ***************************************************************************************************************
