@@ -563,7 +563,7 @@ if($.rw.data.daily_task[2].id == 6 && $.rw.data.daily_task[2].is_finish != 1){
             K = `文章id🚩`;
             if (K == `文章id🚩`) {
 
-                taskurl = `https://api.st615.com/v1/article/list?cid=1&page=1&limit=20&type=0&terminal=Apple&version=1.2.3&token=${jztturlVal}`,
+                taskurl = `https://api.st615.com/v1/article/list?cid=1&page=1&limit=20&type=0&terminal=Apple&version=1.4.1&token=${jztturlVal}`,
                
                 await taskget();
                
@@ -579,8 +579,8 @@ if($.rw.data.daily_task[2].id == 6 && $.rw.data.daily_task[2].is_finish != 1){
             K = `看文章1🚩`;
             if (K == `看文章1🚩`) {
                 
-                taskurl = `https://api.st615.com/v1/article/detail?id=${wzids}&uid=&token=${jztturlVal}&os=14.7.1&device=iPhone%2011`,
-                `https://api.st615.com/v1/article/detail?id=${wzids}&uid=&token=${jztturlVal}&os=14.7.1&device=iPhone%2011`
+                taskurl = `https://api.st615.com/v1/article/detail?id=${wzids}&uid=&token=${jztturlVal}&os=Android 10&device=PCCM00`,
+                `https://api.st615.com/v1/article/detail?id=${wzids}&uid=&token=${jztturlVal}&os=Android 10&device=PCCM00`
                 
                 await taskget();
                
@@ -631,7 +631,7 @@ if($.rw.data.daily_task[2].id == 6 && $.rw.data.daily_task[2].is_finish != 1){
             if (K == `转发文章🚩` && $.rw.data.daily_task[4].id == 14 && $.rw.data.daily_task[4].is_finish != 1) {
         
                 taskurl = `https://api.st615.com/v1/article/share`,
-                taskbody = `device=iPhone%2011&id=${wzids}&os=14.7.1&source=article&token=${jztturlVal}`,
+                taskbody = `device=PCCM00&id=${wzids}&os=Android 10&source=article&token=${jztturlVal}`,
                 await taskpost();
                
                 $.zfwz = DATA
