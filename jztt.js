@@ -17,7 +17,7 @@ api.st615.com
 cron 25 7-20/2 * * *
 */
 
-GXRZ = 'Tom 8.26修复版'
+GXRZ = '九章头条任务开始'
 const $ = Env("九章头条");
 $.idx = ($.idx = ($.getval('jzttSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -36,12 +36,12 @@ let middlejzttURL = [];
 
 console.log(`${GXRZ}\n`);
 $.message += `${GXRZ}\n`
-if ($.isNode() && process.env.jztt_jzttURL) {
-    XH = process.env.jztt_XH || "0"; 
-    TXTX = process.env.jztt_TXTX || "0";
-    SC = process.env.jztt_SC || "0";
-    notifyttt = process.env.jztt_notifyttt || "1";
-    notifyInterval = process.env.jztt_notifyInterval || "2";
+if ($.isNode() && process.env.JZTT_URL) {
+    XH = process.env.JZTT_XH || "0"; 
+    TXTX = process.env.JZTT_TXTX || "0";
+    SC = process.env.JZTT_SC || "0";
+    notifyttt = process.env.JZTT_NOTIFY || "1";
+    notifyInterval = process.env.JZTT_NOTIFY_INTERVAL || "2";
     Minutes = process.env.jztt_Minutes || "10";
 
     COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
@@ -51,12 +51,12 @@ if ($.isNode() && process.env.jztt_jzttURL) {
     )} =============\n`
     );
     if (
-        process.env.jztt_jzttURL &&
-        process.env.jztt_jzttURL.indexOf(COOKIES_SPLIT) > -1
+        process.env.JZTT_URL &&
+        process.env.JZTT_URL.indexOf(COOKIES_SPLIT) > -1
     ) {
-        middlejzttURL = process.env.jztt_jzttURL.split(COOKIES_SPLIT);
+        middlejzttURL = process.env.JZTT_URL.split(COOKIES_SPLIT);
     } else {
-        middlejzttURL = process.env.jztt_jzttURL.split();
+        middlejzttURL = process.env.JZTT_URL.split();
     }
     Object.keys(middlejzttURL).forEach((item) => {
         if (middlejzttURL[item]) {
