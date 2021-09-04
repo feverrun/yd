@@ -28,12 +28,12 @@ http-request ^https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/* kkd.
 const $ = new Env('快看点')
 const notify = $.isNode() ? require('./sendNotify') : '';
 $.idx = ($.idx = ($.getval("kkdcount") || "1") - 1) > 0 ? `${$.idx + 1}` : ""; // 账号扩展字符
-const kkdheaderArr=[]
-const kkdcookieArr=[]
-const kkdsignArr=[]
-let kkdheader = ''//$.getdata('kkdheader')
-let kkdcookie = ''//$.getdata('kkdcookie')
-let kkdsign = ''//$.getdata('kkdsign')
+const kkdheaderArr = []
+const kkdcookieArr = []
+const kkdsignArr = []
+let kkdheader = process.env.KKDHEADER ? process.env.KKDHEADER : $.getdata('kkdheader')
+let kkdcookie = process.env.KKDCOOKIE ? process.env.KKDCOOKIE : $.getdata('kkdcookie')
+let kkdsign = process.env.KKDSIGN ? process.env.KKDSIGN : $.getdata('kkdsign')
 const logs = false //日志
 const invite = 0; //邀请码1为邀请
 let tz = ($.getval('tz') || '1');//通知
@@ -41,7 +41,7 @@ const invited = '';
 let lTadlist = '15884282854261489762';
 let gRadlist = '15884282854261489762';
 let eXadlist = '15884282854261489762';
-var message='';
+var message = '';
 
 if ($.isNode()) {
     hour = new Date( new Date().getTime() + 8 * 60 * 60 * 1000 ).getHours();
