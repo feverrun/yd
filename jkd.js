@@ -23,7 +23,7 @@ const logs =0;
 let status;
 let jkdhdArr = [],jkdckArr = [],jzreadcount = ''
 let jkdhd= $.isNode() ? (process.env.JKDHD ? process.env.JKDHD : "") : ($.getdata('jkdhd') ? $.getdata('jkdhd') : "")
-let jkdck= $.isNode() ? (process.env.JDKCK ? process.env.JDKCK : "") : ($.getdata('jkdck') ? $.getdata('jkdck') : "")
+let jkdck= $.isNode() ? (process.env.JKDCK ? process.env.JKDCK : "") : ($.getdata('jkdck') ? $.getdata('jkdck') : "")
 let jkdcks = ""
 let jkdhds = ""
 
@@ -64,11 +64,11 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
         }else  {
             if (process.env.JKDHD && process.env.JKDHD.indexOf('@') > -1) {
                 jkdhdArr = process.env.JKDHD.split('@');
-                jkdckArr = process.env.JDKCK.split('@');
+                jkdckArr = process.env.JKDCK.split('@');
                 console.log(`您选择的是用"@"隔开\n`)
             } else {
                 jkdhds = [process.env.JKDHD]
-                jkdcks = [process.env.JDKCK]
+                jkdcks = [process.env.JKDCK]
             };
             Object.keys(jkdhds).forEach((item) => {
                 if (jkdhds[item]) {
