@@ -87,7 +87,7 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
                 jkdck = jkdckArr[k]
                 $.index = k + 1;
                 console.log(`\n开始【聚看点${$.index}】`)
-                //$.log(jkdhd)
+                $.log(jkdhd)
                 await ql()
             }
         }
