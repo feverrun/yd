@@ -56,9 +56,6 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
                     console.log(`\n开始【聚看点${$.index}】`)
 
                     await qx()
-
-
-
                 }
             }
         }else  {
