@@ -3,9 +3,8 @@
 #读书任务可以完成，时长上传没做好，广告偶尔可以
 [mitm]
 hostname = *.snssdk.com
-#圈x
 #loon
-http-request luckycat/novel/v1/task/sign_in/* script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/fqxs.js, requires-body=true, timeout=10, tag=🍅番茄小说
+http-request luckycat/novel/v1/task/sign_in/* script-path=fqxs.js, requires-body=true, timeout=10, tag=🍅番茄小说
 [Script]
 cron "55 5 * * *"
 
