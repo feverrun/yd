@@ -4,7 +4,7 @@
 [mitm]
 hostname = *.snssdk.com
 #loon
-http-request luckycat/novel/v1/task/sign_in/* script-path=fqxs.js, requires-body=true, timeout=10, tag=🍅番茄小说
+http-request x/novel/v1/task/sign_in/* script-path=fqxs.js, requires-body=true, timeout=10, tag=🍅番茄小说
 [Script]
 cron "55 5 * * *"
 
