@@ -1,5 +1,5 @@
-/*
-cron 50 4 * * *
+/**
+ * cron "50 4 * * *" dsj.js
  */
 const $ = new Env("电视家");
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -62,10 +62,10 @@ Object.keys(dsj_headers).forEach((item) => {
         await run_rw()
 
         await dsj_lqp()
-        // for (let k = 0; k<5;k++){
-        //     await lhz()
-        //     await $.wait(60000)
-        // }
+        for (let k = 0; k<5;k++){
+            await lhz()
+            await $.wait(60000)
+        }
         await tasks(); // 任务状态
         await wx_tasks()
         await getGametime(); // 游戏时长
@@ -273,68 +273,68 @@ function dsj_rwzt() {
                         task_xiaoman = 0
                     }
                     //浏览广告赚
-                    if(data.data[1].dayCompCount==5){
-                        console.log(`${data.data[1].name}: 已完成`)
+                    if(data.data[2].dayCompCount==5){
+                        console.log(`${data.data[2].name}: 已完成`)
                         H5Page_4 = 1
                     }else{
-                        console.log(`${data.data[1].name}: 未完成`)
+                        console.log(`${data.data[2].name}: 未完成`)
                         H5Page_4 = 0
                     }
 
                     //播放任务
-                    if(data.data[10].dayCompCount==9){
-                        console.log(`${data.data[10].name}: 已完成`)
+                    if(data.data[11].dayCompCount==9){
+                        console.log(`${data.data[11].name}: 已完成`)
                         playTask = 1
                     }else{
-                        console.log(`${data.data[10].name}: 未完成`)
+                        console.log(`${data.data[11].name}: 未完成`)
                         playTask = 0
                     }
                     //手机版分享
-                    if(data.data[6].dayCompCount==1){
-                        console.log(`${data.data[6].name}: 已完成`)
+                    if(data.data[7].dayCompCount==1){
+                        console.log(`${data.data[7].name}: 已完成`)
                         M005 =1
                     }else{
-                        console.log(`${data.data[6].name}: 未完成`)
+                        console.log(`${data.data[7].name}: 未完成`)
                         M005 =0
                     }
                     //刷短视频
-                    if(data.data[11].dayCompCount==5){
-                        console.log(`${data.data[11].name}: 已完成`)
+                    if(data.data[12].dayCompCount==5){
+                        console.log(`${data.data[12].name}: 已完成`)
                         ShortvideoPlay = 1
                     }else{
-                        console.log(`${data.data[11].name}: 未完成`)
+                        console.log(`${data.data[12].name}: 未完成`)
                         ShortvideoPlay = 0
                     }
                     //访问点歌台
-                    if(data.data[12].dayCompCount==1){
-                        console.log(`${data.data[12].name}: 已完成`)
+                    if(data.data[13].dayCompCount==1){
+                        console.log(`${data.data[13].name}: 已完成`)
                         task_mobile_visit_song = 1
                     }else{
-                        console.log(`${data.data[12].name}: 未完成`)
+                        console.log(`${data.data[13].name}: 未完成`)
                         task_mobile_visit_song = 0
                     }
                     //浏览电视相册
-                    if(data.data[13].dayCompCount==1){
-                        console.log(`${data.data[13].name}: 已完成`)
+                    if(data.data[14].dayCompCount==1){
+                        console.log(`${data.data[14].name}: 已完成`)
                         task_mobile_visit_album = 1
                     }else{
-                        console.log(`${data.data[13].name}: 未完成`)
+                        console.log(`${data.data[14].name}: 未完成`)
                         task_mobile_visit_album = 0
                     }
                     //相册上电视task_mobile_upload_album
-                    if(data.data[14].dayCompCount==1){
-                        console.log(`${data.data[14].name}: 已完成`)
+                    if(data.data[15].dayCompCount==1){
+                        console.log(`${data.data[15].name}: 已完成`)
                         task_mobile_upload_album = 1
                     }else{
-                        console.log(`${data.data[14].name}: 未完成`)
+                        console.log(`${data.data[15].name}: 未完成`)
                         task_mobile_upload_album = 0
                     }
                     //开家庭号task_mobile_create_family
-                    if(data.data[15].dayCompCount==1){
-                        console.log(`${data.data[15].name}: 已完成`)
+                    if(data.data[16].dayCompCount==1){
+                        console.log(`${data.data[16].name}: 已完成`)
                         task_mobile_create_family = 1
                     }else{
-                        console.log(`${data.data[15].name}: 未完成`)
+                        console.log(`${data.data[16].name}: 未完成`)
                         task_mobile_create_family = 0
                     }
 
@@ -415,7 +415,7 @@ function signin() {
 function dsj_led() {
     return new Promise((resolve, reject) => {
         let url = {
-            url: `http://api.gaoqingdianshi.com/api/sign/chooseAdditionalReward?rewardId=50`,
+            url: `http://api.gaoqingdianshi.com/api/sign/chooseAdditionalReward?rewardId=55`,
             headers: JSON.parse(dsj_header1),
         }
         $.get(url, (error, response, data) => {
@@ -932,7 +932,7 @@ function lhz() {
             //console.log(data)
             let result = JSON.parse(data)
             if(result.errCode == 0){
-                console.log('\n阅读零花赚：' + '阅读次数:' + result.data.dayComCount)
+                console.log('\n阅读零花赚：' + '阅读次数:' + result.data.dayCompCount)
             }else{
                 console.log('\n【阅读零花赚: '+result.msg)
             }
