@@ -847,7 +847,7 @@ function dsj_getinfo() {
 function dsj_info() {
     return new Promise((resolve, reject) => {
         let url = {
-            url: `${dianshijia_API}/activity/invite/bind?ename=${nickname}&eavatar=${headImgUrl}&uid=${JSON.parse(dsj_header1).userid}&inviteCode=1118265`,
+            url: `${dianshijia_API}/activity/invite/bind?ename=${nickname}&eavatar=${headImgUrl}&uid=${JSON.parse(dsj_header1).userid}&inviteCode=1121445`,
             headers: JSON.parse(dsj_header1),
         }
         $.get(url, (error, response, data) => {
