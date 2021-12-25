@@ -959,7 +959,7 @@ function txzxg_runShareCode(code,identification,title) {
                 'Accept': `application/json, text/plain, */*`,
                 'Origin': `https://wzq.tenpay.com`,
                 'Accept-Encoding': `gzip, deflate, br`,
-                'Cookie': `type=wx; appid=wxcbc3ab3807acb685; accessToken=52_KLsSjUDbvKyf3_0wRme8g9lYUdh1pQvGJtmpTZNAMNpH0YoflIjW1BqAhXfr6Kvzi7YALv24surnyVwo2iv6Rv8KcoihOEUIzeU_wTuDsI0; openid=oA0Gbjorhi5WnAHPOsh0ZoeKdUo4; fskey=v0ba82b202261c6c26e3e7b0196335f3; gOpenid=oA0Gbjorhi5WnAHPOsh0ZoeKdUo4; isHKLv2=false; buildTime=2021-10-28 20:28:01`,
+                'Cookie': `wzq_channel=4001000011..;qlappid=wx9cf8c670ebd68ce4;qlskey=v0ba82b202261c6c26e3e7b0196335f3;qluin=oA0Gbjorhi5WnAHPOsh0ZoeKdUo4@wx.tenpay.com;qq_logtype=16;wx_session_time=1635600986000;wzq_qlappid=wx9cf8c670ebd68ce4;wzq_qlskey=v0ba82b202261c6c26e3e7b0196335f3;wzq_qluin=os-ppuAvAlju18KcWPvtnwzt_HzQ;zxg_openid=oA0Gbjorhi5WnAHPOsh0ZoeKdUo4`,
                 'Content-Type': `application/x-www-form-urlencoded`,
                 'Host': `wzq.tenpay.com`,
                 'Connection': `keep-alive`,
