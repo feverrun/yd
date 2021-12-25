@@ -21,16 +21,17 @@ v2p没有写
 
 有2个分享任务是不做的,找不到数据
 
-cron 0 11,18,22 * * *
+cron 35 10,17,21 * * *
+
 */
 
 
 const $ = new Env('腾讯自选股');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const logs = 0; //响应日志开关,默认关闭
-const app_txzxg_openid = [],app_txzxg_token=[],app_txzxg_fskey=[],app_txzxg_dev=[],app_txzxg_md5mid=[],app_txzxg_devid=[],app_txzxg_mid=[],txzxg_count = '',app_txzxg_cn_UA=[]
+const app_txzxg_openid = [],app_txzxg_token=[],app_txzxg_fskey=[],app_txzxg_dev=[],app_txzxg_md5mid=[],app_txzxg_devid=[],app_txzxg_mid=[],txzxg_count = ''
 let task_ticket='',task_ticket_state=0
-let dp_status=0,gg_status=0,dzx_status=0,rzx_status=0,jzx_status=0,lzx_status=0,gz_status=0,krd_status=0,fhq_status=0,fzx_status=0,jzx__status=0
+let dp_status=0,gg_status=0,dzx_status=0,rzx_status=0,jzx_status=0,lzx_status=0,gz_status=0,krd_status=0,fhq_status=0,fzx_status=0
 let subTitle = ``;
 let status;
 status = (status = ($.getval("txzxg_status") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
@@ -117,11 +118,10 @@ let txzxg_openid = $.getdata('txzxg_openid')
                 txzxg_dev = process.env.txzxg_dev.split('\n');
             } else if(process.env.txzxg_dev && process.env.txzxg_dev.indexOf('#') > -1){
                 txzxg_dev = process.env.txzxg_dev.split('#');
-
             }else{
                 txzxg_dev = process.env.txzxg_dev.split();
-
             };
+
             Object.keys(txzxg_dev).forEach((item) => {
                 if (txzxg_dev[item]) {
                     app_txzxg_dev.push(txzxg_dev[item]);
@@ -198,30 +198,8 @@ let txzxg_openid = $.getdata('txzxg_openid')
             });
         }
 
-        if(!process.env.txzxg_cn_UA){
-            console.log(`\n【${$.name}】：未填写相应变量 txzxg_cn_UA ,将默认分配`);
-        }else{
-            if (process.env.txzxg_cn_UA && process.env.txzxg_cn_UA.indexOf('@') > -1) {
-                txzxg_cn_UA = process.env.txzxg_cn_UA.split('@');
 
-            } else if (process.env.txzxg_cn_UA && process.env.txzxg_cn_UA.indexOf('\n') > -1) {
-                txzxg_cn_UA = process.env.txzxg_cn_UA.split('\n');
 
-            } else if(process.env.txzxg_cn_UA && process.env.txzxg_cn_UA.indexOf('#') > -1){
-                txzxg_cn_UA = process.env.txzxg_cn_UA.split('#');
-
-            }else{
-                txzxg_cn_UA = process.env.txzxg_cn_UA.split();
-
-            };
-            Object.keys(txzxg_cn_UA).forEach((item) => {
-                if (txzxg_cn_UA[item]) {
-                    app_txzxg_cn_UA.push(txzxg_cn_UA[item]);
-
-                };
-            });
-
-        }
 
 
     }else{
@@ -279,36 +257,21 @@ let txzxg_openid = $.getdata('txzxg_openid')
                 //app_txzxg_devid.push($.getdata('txzxg_devid'))
             }
 
-            if(!$.getdata('txzxg_cn_UA')){
-                console.log(`\n【${$.name}】：未填写相应变量 txzxg_cn_UA ,将默认分配`);
-            }else{
-                if ($.getdata('txzxg_cn_UA') && $.getdata('txzxg_cn_UA').indexOf('@') > -1) {
-                    app_txzxg_cn_UA = $.getdata('txzxg_cn_UA').split('@');
-                } else if ($.getdata('txzxg_cn_UA') && $.getdata('txzxg_cn_UA').indexOf('\n') > -1) {
-                    app_txzxg_cn_UA = $.getdata('txzxg_cn_UA').split('\n');
-                } else if($.getdata('txzxg_cn_UA') && $.getdata('txzxg_cn_UA').indexOf('#') > -1){
-                    app_txzxg_cn_UA = $.getdata('txzxg_cn_UA').split('#');
-                }else{
-                    app_txzxg_cn_UA = $.getdata('txzxg_cn_UA').split();
-                };
+        }
+        apptz = $.getdata('apptz');
+        apptx = $.getdata('apptx');
+        appyq = $.getdata('appyq');
 
-            }
-            /*
-          apptz = $.getdata('apptz');
-          apptx = $.getdata('apptx');
-          appyq = $.getdata('appyq');
+        let txzxg_count = ($.getval('txzxg_count') || '1');
+        for (let i = 2; i <= txzxg_count; i++) {
+            app_txzxg_openid.push($.getdata(`app_txzxg_openid${i}`))
+            app_txzxg_token.push($.getdata(`app_txzxg_token${i}`))
+            app_txzxg_fskey.push($.getdata(`app_txzxg_fskey${i}`))
 
-              let txzxg_count = ($.getval('txzxg_count') || '1');
-            for (let i = 2; i <= txzxg_count; i++) {
-              app_txzxg_openid.push($.getdata(`app_txzxg_openid${i}`))
-              app_txzxg_token.push($.getdata(`app_txzxg_token${i}`))
-             app_txzxg_fskey.push($.getdata(`app_txzxg_fskey${i}`))
-
-             app_txzxg_devid.push($.getdata(`txzxg_devid${i}`))
-             app_txzxg_md5mid.push($.getdata(`txzxg_md5mid${i}`))
-             app_txzxg_mid.push($.getdata(`txzxg_mid${i}`))
-             app_txzxg_dev.push($.getdata(`txzxg_dev${i}`));
-          }*/
+            app_txzxg_devid.push($.getdata(`txzxg_devid${i}`))
+            app_txzxg_md5mid.push($.getdata(`txzxg_md5mid${i}`))
+            app_txzxg_mid.push($.getdata(`txzxg_mid${i}`))
+            app_txzxg_dev.push($.getdata(`txzxg_dev${i}`));
         }
     }
     console.log(
@@ -319,17 +282,13 @@ let txzxg_openid = $.getdata('txzxg_openid')
         ).toLocaleString()} ===\n`
     );
     console.log(`===【共 ${app_txzxg_openid.length} 个账号】===\n`);
-
+    if(!apptz){apptz=true};
+    if(!apptx){apptx=true};
 
     for (i = 0; i < app_txzxg_openid.length; i++) {
         txzxg_openid=app_txzxg_openid[i]
         txzxg_token=app_txzxg_token[i]
         txzxg_fskey=app_txzxg_fskey[i]
-        txzxg_cn_UA=app_txzxg_cn_UA[i]
-
-        if(!txzxg_cn_UA){
-            txzxg_cn_UA='Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; EML-AL00 Build/HUAWEIEML-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 UCBrowser/11.9.4.974 UWS/2.13.1.48 Mobile Safari/537.36 AliApp(DingTalk/4.5.11) com.alibaba.android.rimet/10487439 Channel/227200 language/zh-CN'
-        }
 
         if(!process.env.txzxg_devid|| !$.getdata(`txzxg_devid`)){
             txzxg_devid='abc3aa0e5dbdfb469d232cf415f6cf27'
@@ -355,22 +314,18 @@ let txzxg_openid = $.getdata('txzxg_openid')
             txzxg_md5mid=app_txzxg_md5mid[i]
         }
 
-        //读取任务列表地址
+
         txzxg_list_url=`https://wzq.tenpay.com/cgi-bin/activity_task_daily.fcgi?action=home&type=routine&actid=1111&invite_code=&_=1634063821953&openid=${txzxg_openid}&fskey=${txzxg_fskey}&channel=1&access_token=${txzxg_token}&_appName=android&_appver=9.4.1&_osVer=10&_devId=${txzxg_devid}`
-        //做任务地址
+
         txzxg_task_ticket_url=`https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskticket&channel=1&actid=1111&uin=${txzxg_openid}&check=11&appid=wxcbc3ab3807acb685&openid=${txzxg_openid}&fskey=${txzxg_fskey}&access_token=${txzxg_token}&g_openid=${txzxg_openid}&uin=${txzxg_openid}&_appName=android&_dev=${txzxg_dev}&_devId=${txzxg_devid}&_mid=${txzxg_devid}&_md5mid=${txzxg_md5mid}&_appver=9.4.1&_ifChId=3178&_screenW=1080&_screenH=2210&_osVer=10&_uin=${txzxg_openid}&_wxuin=${txzxg_openid}&_net=WIFI&__random_suffix=17671&_buildtype=store&buildtime=2021-09-29+17%3A01%3A24&lang=zh_CN`
 
-
         txzxg_headers={"Host": "wzq.tenpay.com","referer": "http://zixuanguapp.finance.qq.com","accept-encoding": "gzip","user-agent": "okhttp/3.12.13"}
-
-        txzxg_cn_headers={"Host": "zqact03.tenpay.com","sec-fetch-mode": "cors","user-agent": txzxg_cn_UA,"x-requested-with": "com.tencent.portfolio","sec-fetch-site": "same-origin","referer": "https://zqact03.tenpay.com/activity/page/raisebull/"}
 
         $.index = i + 1;
 
         console.log(`\n开始【第 ${$.index} 个账号任务】`);
-        await txzxg_task_sign()
         await txzxg_task_list()
-
+        await txzxg_task_sign()
         console.log(`\n【${$.name}---开始做未完成任务】`)
 
         //查看今日大盘行情
@@ -454,25 +409,12 @@ let txzxg_openid = $.getdata('txzxg_openid')
             //}
 
         }
-        await Withdrawal_bill()
-        await txzxg_task_list()
-        /*
-        //做长牛
-        await txzxg_cn_task_list()
-        //签到
 
-        ///添加股票到自选
-        //if(jzx_status==1){
-            await txzxg_cn_task_ticket()
-            await txzxg_cn_gettask(jzx_title)
-            if(task_ticket_state==1){
-                //await txzxg_cn_gettask(jzx_id,jzx_tid,jzx_title)
-                await txzxg_gettask(jzx_title)
-            }
-        //}
-        */
+
+
 
     };
+
 
 //if(apptz){if ($.isNode() ){await notify.sendNotify($.name, subTitle)}};
 
@@ -500,214 +442,10 @@ function get_appdata() {
     }
 }
 
-//长牛领签到
-function txzxg_cn_sign() {
-    let runtime = Math.round(new Date().getTime())
-    return new Promise((resolve, reject) => {
-        $.get({
-            url : `https://zqact03.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&actid=1105&tid=39&id=6&task_ticket=${task_ticket}&_=1635754837578&openid=${txzxg_openid}&fskey=${txzxg_fskey}&channel=1&access_token=${txzxg_token}&_appName=android&_appver=9.4.1&_osVer=10&_devId=${txzxg_devid}`,
-            headers : txzxg_cn_headers,
-            //body : ``,
-        }, async(error, response, data) => {
-            //console.log(data)
-            let result = JSON.parse(data)
-            if(result.retcode==0){
-                console.log(`\n【${$.name}---签到】: 获得${result.amount}金币`)
-
-
-            }else{
-                console.log(`\n【${$.name}---签到】: ${result.retmsg}`)
-            }
-
-            resolve()
-        })
-    })
-}
-
-//长牛获取票据
-function txzxg_cn_task_ticket() {
-    return new Promise((resolve, reject) => {
-        $.get({
-            url : cn_task_url(),
-            headers : txzxg_cn_headers,
-            //body : ``,
-        }, async(error, response, data) => {
-            //console.log(data)
-            let result = JSON.parse(data)
-            if(result.retcode==0){
-                console.log(`\n【${$.name}---获取票据】: 成功获取到票据,为:${result.task_ticket}`)
-                task_ticket=result.task_ticket
-                //txzxg_task_url=task_url(id,tid)
-                task_ticket_state=1
-
-
-            }else{
-                console.log(`\n【${$.name}---获取票据】: ${result.retmsg}`)
-            }
-
-            resolve()
-        })
-    })
-}
-
-//长牛任务列表
-function txzxg_cn_task_list() {
-    return new Promise((resolve, reject) => {
-        $.get({
-            url : `https://zqact03.tenpay.com/cgi-bin/activity_year_party.fcgi?invite_code=&help_code=&share_date=&type=bullish&action=home&actid=1105&_=1635760216949&openid=${txzxg_openid}&fskey=${txzxg_fskey}&channel=1&access_token=${txzxg_token}&_appName=android&_appver=9.4.1&_osVer=10&_devId=${txzxg_devid}`,
-            headers : txzxg_cn_headers,
-            //body : ``,
-        }, async(error, response, data) => {
-            //console.log(data)
-            let result = JSON.parse(data)
-            if(result.retcode==0){
-
-                if(result.task_pkg[0].tasks[0].status==1){
-                    console.log(`\n【${$.name}---今日任务状态】: \n\n---每日签到：已完成`)
-                }else{
-                    console.log(`\n【${$.name}---今日任务状态】: \n\n---每日签到：未完成`)
-                    qd_status=1
-                    qd_title='每日签到'
-                    qd_id=result.task_pkg[0].tasks[0].id
-                    qd_tid=result.task_pkg[0].tasks[0].tid
-                }
-
-                if(result.task_pkg[0].tasks[2].status==1){
-
-                    console.log(`---今日大盘行情：已完成`)
-                }else{
-                    console.log(`---今日大盘行情：未完成`)
-                    gg_status=1
-                    gg_title='今日大盘行情'
-                    gg_id=result.task_pkg[0].tasks[2].id
-                    gg_tid=result.task_pkg[0].tasks[2].tid
-                }
-                /*
-                if(result.task_pkg[0].tasks[2].status==1){
-                    console.log(`---分享资讯：已完成`)
-                }else{
-                    console.log(`---分享资讯：未完成`)
-                    fxzx_status=1
-                    fxzx_title='分享资讯'
-                    fxzx_id=result.task_pkg[0].tasks[2].id
-                    fxzx_tid=result.task_pkg[0].tasks[2].tid
-                }
-
-                if(result.task_pkg[0].tasks[3].status==1){
-                    console.log(`---分享股票行情：已完成`)
-                }else{
-                    console.log(`---分享股票行情：未完成`)
-                    fxhq_status=1
-                    fxhq_title='分享股票行情'
-                    fxhq_id=result.task_pkg[0].tasks[3].id
-                    fxhq_tid=result.task_pkg[0].tasks[3].tid
-                }
-                */
-                if(result.task_pkg[0].tasks[5].status==1){
-                    console.log(`---添加股票到自选：已完成`)
-                }else{
-                    console.log(`---添加股票到自选：未完成`)
-                    jzx_status=1
-                    jzx_title='添加股票到自选'
-
-                    jzx_id=result.task_pkg[0].tasks[5].id
-                    jzx_tid=result.task_pkg[0].tasks[5].tid
-
-                }
-                /*
-                if(result.task_pkg[0].tasks[5].status==1){
-                    console.log(`---分享贴子：已完成`)
-                }else{
-                    console.log(`---分享贴子：未完成`)
-                    fxtz_status=1
-                    fxtz_title='分享贴子'
-                    fxtz_id=result.task_pkg[0].tasks[5].id
-                    fxtz_tid=result.task_pkg[0].tasks[5].tid
-                }
-
-                if(result.task_pkg[0].tasks[6].status==1){
-                    console.log(`---点赞评论：已完成`)
-                }else{
-                    console.log(`---点赞评论：未完成`)
-                    dz_status=1
-                    dz_title='点赞评论'
-                    dz_id=result.task_pkg[0].tasks[6].id
-                    dz_tid=result.task_pkg[0].tasks[6].tid
-                }
-
-                if(result.task_pkg[0].tasks[7].status==1){
-                    console.log(`---查看选股卡页：已完成`)
-                }else{
-                    console.log(`---查看选股卡页：未完成`)
-                    kky_status=1
-                    kky_title='查看选股卡页'
-                    kky_id=result.task_pkg[0].tasks[7].id
-                    kky_tid=result.task_pkg[0].tasks[7].tid
-                }
-
-                if(result.task_pkg[0].tasks[8].status==1){
-                    console.log(`---模拟炒股：已完成`)
-                }else{
-                    console.log(`---模拟炒股：未完成`)
-                    mn_status=1
-                    mn_title='模拟炒股'
-                    mn_id=result.task_pkg[0].tasks[8].id
-                    mn_tid=result.task_pkg[0].tasks[8].tid
-                }
-
-                if(result.task_pkg[0].tasks[9].status==1){
-                    console.log(`---分享一篇资讯：已完成`)
-                }else{
-                    console.log(`---分享一篇资讯：未完成`)
-                    fzx_status=1
-                    fzx_title='分享一篇资讯'
-                    fzx_id=result.task_pkg[0].tasks[9].id
-                    fzx_tid=result.task_pkg[0].tasks[9].tid
-                }
-                //console.log(gg_id,gg_tid)
-                 */
-
-            }else{
-                console.log(`\n【${$.name}---获取任务列表】: ${result.retmsg}`)
-
-            }
-
-
-            resolve()
-        })
-    })
-}
-
-//做长牛任务
-function txzxg_cn_gettask(task_id,task_tid,title) {
-    return new Promise((resolve, reject) => {
-        $.get({
-            url : `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&&actid=1105&id=${task_id}&tid=${task_tid}&uin=${txzxg_openid}&check=11&appid=wxcbc3ab3807acb685&openid=${txzxg_openid}&fskey=${txzxg_fskey}&access_token=${app_txzxg_token}&g_openid=${txzxg_openid}&uin=${txzxg_openid}&_appName=android&_dev=SKW-A0&_devId=${txzxg_devid}&_mid=${txzxg_devid}&_md5mid=${txzxg_md5mid}&_appver=9.4.1&_ifChId=3178&_screenW=1080&_screenH=2210&_osVer=10&_uin=${txzxg_openid}&_wxuin=${txzxg_openid}&_net=WIFI&__random_suffix=99184&_buildtype=store&buildtime=2021-09-29+17%3A01%3A24&lang=zh_CN`,
-            headers : txzxg_headers,
-            //body : ``,
-        }, async(error, response, data) => {
-            //console.log(title)
-            //console.log(data)
-            let result = JSON.parse(data)
-            if(result.retcode==0){
-                console.log(`\n【${$.name}---提交任务${title}】: 获得 ${result.reward_desc}`)
-
-            }else{
-                console.log(`\n【${$.name}---提交任务${title}】: ${result.retmsg}`)
-            }
-
-            resolve()
-        })
-    })
-}
-
-//签到
 function txzxg_task_sign() {
-    let runtime = Math.round(new Date().getTime())
-    console.log(formatDate())
     return new Promise((resolve, reject) => {
         $.get({
-            url : `https://wzq.tenpay.com/cgi-bin/activity_sign_task.fcgi?actid=2002&action=signdone&date=${formatDate()}&_=${runtime}&openid=${txzxg_openid}&fskey=${txzxg_fskey}&channel=1&access_token=${txzxg_token}&_appName=android&_appver=9.4.1&_osVer=10&_devId=${txzxg_devid}`,
+            url : `https://wzq.tenpay.com/cgi-bin/activity_sign_task.fcgi?actid=2002&action=signdone&date=20211030&_=1635598552980&openid=${txzxg_openid}&fskey=${txzxg_fskey}&channel=1&access_token=${txzxg_token}&_appName=android&_appver=9.4.1&_osVer=10&_devId=${txzxg_devid}`,
             headers : txzxg_headers,
             //body : ``,
         }, async(error, response, data) => {
@@ -737,6 +475,7 @@ function txzxg_task_list() {
             //console.log(data)
             let result = JSON.parse(data)
             if(result.retcode==0){
+
                 if(result.task_pkg[0].tasks[0].status==1){
                     console.log(`\n【${$.name}---今日任务状态】: \n\n---查看今日大盘行情：已完成`)
                 }else{
@@ -859,7 +598,7 @@ function txzxg_task_ticket(id,tid) {
             headers : txzxg_headers,
             //body : ``,
         }, async(error, response, data) => {
-            console.log(data)
+            //console.log(data)
             let result = JSON.parse(data)
             if(result.retcode==0){
                 console.log(`\n【${$.name}---获取票据】: 成功获取到票据,为:${result.task_ticket}`)
@@ -876,7 +615,7 @@ function txzxg_task_ticket(id,tid) {
         })
     })
 }
-//做任务
+
 function txzxg_gettask(title) {
     return new Promise((resolve, reject) => {
         $.get({
@@ -886,13 +625,17 @@ function txzxg_gettask(title) {
         }, async(error, response, data) => {
             //console.log(title)
             //console.log(data)
-            let result = JSON.parse(data)
+            /*let result = JSON.parse(data)
             if(result.retcode==0){
-                console.log(`\n【${$.name}---提交任务${title}】: 获得 ${result.reward_desc}`)
+                console.log(`\n【${$.name}---获取票据】: 成功获取到票据,为:${result.task_ticket}`)
+                task_ticket=result.task_ticket
+                txzxg_task_url=task_url()
+                task_ticket_state=1
+
 
             }else{
-                console.log(`\n【${$.name}---提交任务${title}】: ${result.retmsg}`)
-            }
+               console.log(`\n【${$.name}---获取票据】: ${result.retmsg}`)
+            }*/
 
             resolve()
         })
@@ -910,13 +653,13 @@ function txzxg_getapp_ggCode() {
             let result = JSON.parse(data)
             if(result.retcode==0){
                 let share_code=result.share_code
-                console.log(`\n【${$.name}---获取个股行情code】: 成功获取到code,为:${share_code}`)
+                console.log(`\n【${$.name}---获取code】: 成功获取到code,为:${share_code}`)
                 //txzxg_task_url=task_url()
                 //task_ticket_state=1
-                await txzxg_runShareCode(share_code,1,'分享个股行情')
+                await txzxg_runShareCode(share_code)
 
             }else{
-                console.log(`\n【${$.name}----获取个股行情code】: ${result.retmsg}`)
+                console.log(`\n【${$.name}----获取code】: ${result.retmsg}`)
             }
 
             resolve()
@@ -935,13 +678,13 @@ function txzxg_getapp_zxCode() {
             let result = JSON.parse(data)
             if(result.retcode==0){
                 let share_code=result.share_code
-                console.log(`\n【${$.name}---获取资讯code】: 成功获取到code,为:${share_code}`)
+                console.log(`\n【${$.name}---获取code】: 成功获取到code,为:${share_code}`)
                 //txzxg_task_url=task_url()
                 //task_ticket_state=1
-                await txzxg_runShareCode(share_code,0,'分享资讯')
+                await txzxg_runShareCode(share_code)
 
             }else{
-                console.log(`\n【${$.name}----获取资讯code】: ${result.retmsg}`)
+                console.log(`\n【${$.name}----获取code】: ${result.retmsg}`)
             }
 
             resolve()
@@ -949,7 +692,7 @@ function txzxg_getapp_zxCode() {
     })
 }
 //做分享任务
-function txzxg_runShareCode(code,identification,title) {
+function txzxg_runShareCode(code) {
     return new Promise((resolve, reject) => {
         $.post({
             url : `https://wzq.tenpay.com/cgi-bin/activity/activity_share.fcgi?`,//txzxg_task_ticket_url,
@@ -965,15 +708,15 @@ function txzxg_runShareCode(code,identification,title) {
                 'Referer': `https://wzq.tenpay.com/mp/v2/index.html?stat_data=4003000011`,
                 'Accept-Language': `zh-cn`
             },
-            body : `_h5ver=2.0.1&action=share_code_info&share_type=task_5${identification}_1111&share_code=${code}`,
+            body : `_h5ver=2.0.1&action=share_code_info&share_type=task_51_1111&share_code=${code}`,
         }, async(error, response, data) => {
             //console.log(data)
             let result = JSON.parse(data)
             if(result.retcode==0){
-                console.log(`\n【${$.name}---${title}】: 好友助力分享成功`)
+                console.log(`\n【${$.name}---分享个股行情】: 好友助力分享成功`)
 
             }else{
-                console.log(`\n【${$.name}----${title}】: ${result.retmsg}`)
+                console.log(`\n【${$.name}----分享个股行情】: ${result.retmsg}`)
             }
 
             resolve()
@@ -982,94 +725,9 @@ function txzxg_runShareCode(code,identification,title) {
 }
 
 function task_url(id,tid) {
-    let url=`https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1111&id=${id}&tid=${tid}&task_ticket=${task_ticket}&uin=${txzxg_openid}&check=11&appid=wxcbc3ab3807acb685&openid=${txzxg_openid}&fskey=${txzxg_fskey}&access_token=${txzxg_token}&g_openid=${txzxg_openid}&_appName=android&_dev=SKW-A0&_devId=${txzxg_devid}&_mid=${txzxg_devid}&_md5mid=${txzxg_md5mid}&_appver=9.4.1&_ifChId=3178&_screenW=1080&_screenH=2210&_osVer=10&_uin=${txzxg_openid}&_wxuin=${txzxg_openid}&_net=WIFI&__random_suffix=21141&_buildtype=store&buildtime=2021-09-29%2017%3A01%3A24&lang=zh_CN`
+    url=`https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1111&id=${id}&tid=${tid}&task_ticket=${task_ticket}&uin=${txzxg_openid}&check=11&appid=wxcbc3ab3807acb685&openid=${txzxg_openid}&fskey=${txzxg_fskey}&access_token=${txzxg_token}&g_openid=${txzxg_openid}&_appName=android&_dev=SKW-A0&_devId=${txzxg_devid}&_mid=${txzxg_devid}&_md5mid=${txzxg_md5mid}&_appver=9.4.1&_ifChId=3178&_screenW=1080&_screenH=2210&_osVer=10&_uin=${txzxg_openid}&_wxuin=${txzxg_openid}&_net=WIFI&__random_suffix=21141&_buildtype=store&buildtime=2021-09-29%2017%3A01%3A24&lang=zh_CN`
     return url
 }
-
-function cn_task_url() {
-    let url=`https://zqact03.tenpay.com/cgi-bin/activity_task.fcgi?action=taskticket&actid=1105&_=1635754835365&openid=${txzxg_openid}&fskey=${txzxg_fskey}&channel=1&access_token=${txzxg_token}&_appName=android&_appver=9.4.1&_osVer=10&_devId=${txzxg_devid}`
-    return url
-}
-
-//获取提现的票据
-function Withdrawal_bill() {
-    return new Promise((resolve) => {
-        let url = {
-            url: `https://zqact03.tenpay.com/cgi-bin/shop.fcgi?action=order_ticket&type=2&_=${Math.round(new Date().getTime())}&openid=${txzxg_openid}&fskey=${txzxg_fskey}&channel=1&access_token=${txzxg_token}&_appName=android&_appver=9.4.1&_osVer=10&_devId=${txzxg_devid}`,
-            headers: {"Host": "zqact03.tenpay.com","referer": "https://zqact03.tenpay.com/activity/page/exchangeRights/","accept-encoding": "gzip","user-agent": "okhttp/3.12.13","x-requested-with": "com.tencent.portfolio"},
-        };
-        $.get(url, async (err, resp, data) => {
-            try {
-                if (err) {
-                    console.log(`【${$.name}】: API查询请求失败 ‼`);
-                    console.log(JSON.stringify(err));
-                    //$.logErr(err);
-                } else {
-                    let result = JSON.parse(data)
-                    if(result.retcode==0){
-                        console.log(`\n【${$.name}---本次提现票据】: ${result.ticket}`)
-                        let ticket=result.ticket
-                        await Withdrawal(ticket)
-                    }else{
-                        console.log(`\n【${$.name}---本次提现票据】: ${result.retmsg}`)
-                    }
-
-                }
-
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
-        });
-    });
-}
-
-//提现
-function Withdrawal(ticket) {
-    return new Promise((resolve) => {
-        let url = {
-            url: `https://zqact03.tenpay.com/cgi-bin/shop.fcgi?action=order&type=2&ticket=${ticket}&item_id=202003102146152a9e8885&_=${Math.round(new Date().getTime())}&openid=${txzxg_openid}&fskey=${txzxg_fskey}&channel=1&access_token=${txzxg_token}&_appName=android&_appver=9.4.1&_osVer=10&_devId=${txzxg_devid}`,
-            headers: {"Host": "zqact03.tenpay.com","referer": "https://zqact03.tenpay.com/activity/page/exchangeRights/","accept-encoding": "gzip","user-agent": "okhttp/3.12.13","x-requested-with": "com.tencent.portfolio"},
-        };
-        $.get(url, async (err, resp, data) => {
-            try {
-                if (err) {
-                    console.log(`【${$.name}】: API查询请求失败 ‼`);
-                    console.log(JSON.stringify(err));
-                    //$.logErr(err);
-                } else {
-                    let result = JSON.parse(data)
-                    if(result.retcode==0){
-
-                        console.log(`\n【${$.name}---提现】: ${result.ticket}`)
-
-                    }else{
-                        console.log(`\n【${$.name}---提现】: ${result.retmsg}`)
-                    }
-
-                }
-
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
-        });
-    });
-}
-
-function formatDate() {
-    let date=new Date()
-    let y = date.getFullYear();
-    let m = date.getMonth() + 1;
-    let d = date.getDate();
-    m = m < 10 ? '0' + m : m;
-    d = d < 10 ? '0' + d : d;
-    return `${y}${m}${d}`;
-};
-
-
 
 function Env(t, e) {
     class s {
