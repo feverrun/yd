@@ -959,11 +959,11 @@ function txzxg_runShareCode(code,identification,title) {
                 'Accept': `application/json, text/plain, */*`,
                 'Origin': `https://wzq.tenpay.com`,
                 'Accept-Encoding': `gzip, deflate, br`,
-                'Cookie': `wzq_channel=4001000011..;qlappid=wx9cf8c670ebd68ce4;qlskey=v0ba8297915617d4a5a04e563fc06f92;qluin=085e9858eed8b74987258621a@wx.tenpay.com;qq_logtype=16;wx_session_time=1635600986000;wzq_qlappid=wx9cf8c670ebd68ce4;wzq_qlskey=v0ba8297915617d4a5a04e563fc06f92;wzq_qluin=os-ppuAvAlju18KcWPvtnwzt_HzQ;zxg_openid=oA0Gbju6AN_bXjZ8lIAmx0O2uPZc`,
+                'Cookie': `type=wx; appid=wxcbc3ab3807acb685; accessToken=52_KLsSjUDbvKyf3_0wRme8g9lYUdh1pQvGJtmpTZNAMNpH0YoflIjW1BqAhXfr6Kvzi7YALv24surnyVwo2iv6Rv8KcoihOEUIzeU_wTuDsI0; openid=oA0Gbjorhi5WnAHPOsh0ZoeKdUo4; fskey=v0ba82b202261c6c26e3e7b0196335f3; gOpenid=oA0Gbjorhi5WnAHPOsh0ZoeKdUo4; isHKLv2=false; buildTime=2021-10-28 20:28:01`,
                 'Content-Type': `application/x-www-form-urlencoded`,
                 'Host': `wzq.tenpay.com`,
                 'Connection': `keep-alive`,
-                'User-Agent': `Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.7(0x18000733) NetType/4G Language/zh_CN`,
+                'User-Agent': `Mozilla/5.0 (Linux; Android 10; PCCM00 Build/QKQ1.191021.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045713 Mobile Safari/537.36 qqstock/9.5.1 qqstock/9.5.1 container/fund`,
                 'Referer': `https://wzq.tenpay.com/mp/v2/index.html?stat_data=4003000011`,
                 'Accept-Language': `zh-cn`
             },
