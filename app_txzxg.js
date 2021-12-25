@@ -21,9 +21,7 @@ v2p没有写
 
 有2个分享任务是不做的,找不到数据
 
-cron 35 10,17,21 * * * app_txzxg.js
-
-
+cron 0 11,18,22 * * *
 */
 
 
@@ -136,7 +134,7 @@ let txzxg_openid = $.getdata('txzxg_openid')
         //变量txzxg_mid
         if(!process.env.txzxg_mid||process.env.txzxg_mid==''){
             console.log(`\n【${$.name}】：未提供变量 txzxg_mid ,将默认分配`);
-            txzxg_mid='f3c31202ddaaf1da4d779c11d169bebcd1a16084'
+            txzxg_mid='79141f967ee3474c0b2ffba43e674bc84bc2ba1e'
         }else{
 
             if (process.env.txzxg_mid && process.env.txzxg_mid.indexOf('@') > -1) {
@@ -159,7 +157,7 @@ let txzxg_openid = $.getdata('txzxg_openid')
         //变量txzxg_md5mid
         if(!process.env.txzxg_md5mid||process.env.txzxg_md5mid==''){
             console.log(`\n【${$.name}】：未提供变量 txzxg_md5mid ,将默认分配`);
-            txzxg_md5mid='2801F711EA636FD589B73B96F8D609F2'
+            txzxg_md5mid='abc3aa0e5dbdfb469d232cf415f6cf27'
         }else{
             if (process.env.txzxg_md5mid && process.env.txzxg_md5mid.indexOf('@') > -1) {
                 txzxg_md5mid = process.env.txzxg_md5mid.split('@');
@@ -181,7 +179,7 @@ let txzxg_openid = $.getdata('txzxg_openid')
         //变量txzxg_devid
         if(!process.env.txzxg_devid||process.env.txzxg_devid==''){
             console.log(`\n【${$.name}】：未提供变量 txzxg_devid ,将默认分配`);
-            txzxg_devid='2801F711EA636FD589B73B96F8D609F2'
+            txzxg_devid='abc3aa0e5dbdfb469d232cf415f6cf27'
         }else{
             if (process.env.txzxg_devid && process.env.txzxg_devid.indexOf('@') > -1) {
                 txzxg_devid = process.env.txzxg_devid.split('@');
@@ -259,7 +257,7 @@ let txzxg_openid = $.getdata('txzxg_openid')
             //变量txzxg_mid
             if(!$.getdata('txzxg_mid')||$.getdata('txzxg_mid')==''){
                 console.log(`\n【${$.name}】：未提供变量 txzxg_mid ,将默认分配`);
-                //txzxg_mid='f3c31202ddaaf1da4d779c11d169bebcd1a16084'
+                //txzxg_mid='79141f967ee3474c0b2ffba43e674bc84bc2ba1e'
             }else{
 
                 app_txzxg_mid.push($.getdata('txzxg_mid'))
@@ -268,7 +266,7 @@ let txzxg_openid = $.getdata('txzxg_openid')
             //变量txzxg_md5mid
             if(!$.getdata('txzxg_md5mid')||$.getdata('txzxg_md5mid')==''){
                 console.log(`\n【${$.name}】：未提供变量 txzxg_md5mid ,将默认分配`);
-                //txzxg_md5mid='2801F711EA636FD589B73B96F8D609F2'
+                //txzxg_md5mid='abc3aa0e5dbdfb469d232cf415f6cf27'
             }else{
                 app_txzxg_md5mid.push($.getdata('txzxg_md5mid'))
             }
@@ -276,7 +274,7 @@ let txzxg_openid = $.getdata('txzxg_openid')
             //变量txzxg_devid
             if(!$.getdata('txzxg_devid')||$.getdata('txzxg_devid')==''){
                 console.log(`\n【${$.name}】：未提供变量 txzxg_devid ,将默认分配`);
-                txzxg_devid='2801F711EA636FD589B73B96F8D609F2'
+                txzxg_devid='abc3aa0e5dbdfb469d232cf415f6cf27'
             }else{
                 //app_txzxg_devid.push($.getdata('txzxg_devid'))
             }
@@ -334,7 +332,7 @@ let txzxg_openid = $.getdata('txzxg_openid')
         }
 
         if(!process.env.txzxg_devid|| !$.getdata(`txzxg_devid`)){
-            txzxg_devid='f3c31202ddaaf1da4d779c11d169bebcd1a16084'
+            txzxg_devid='abc3aa0e5dbdfb469d232cf415f6cf27'
         }else{
             txzxg_devid=app_txzxg_devid[i]
         }
@@ -346,13 +344,13 @@ let txzxg_openid = $.getdata('txzxg_openid')
         }
 
         if(!process.env.txzxg_mid|| !$.getdata(`txzxg_mid`)){
-            txzxg_mid='f3c31202ddaaf1da4d779c11d169bebcd1a16084'
+            txzxg_mid='79141f967ee3474c0b2ffba43e674bc84bc2ba1e'
         }else{
             txzxg_mid=app_txzxg_mid[i]
         }
 
         if(!process.env.txzxg_md5mid|| !$.getdata(`txzxg_md5mid`)){
-            txzxg_md5mid='2801F711EA636FD589B73B96F8D609F2'
+            txzxg_md5mid='abc3aa0e5dbdfb469d232cf415f6cf27'
         }else{
             txzxg_md5mid=app_txzxg_md5mid[i]
         }
@@ -959,11 +957,11 @@ function txzxg_runShareCode(code,identification,title) {
                 'Accept': `application/json, text/plain, */*`,
                 'Origin': `https://wzq.tenpay.com`,
                 'Accept-Encoding': `gzip, deflate, br`,
-                'Cookie': `wzq_channel=4001000011..;qlappid=wx9cf8c670ebd68ce4;qlskey=v0ba82b202261c6c26e3e7b0196335f3;qluin=oA0Gbjorhi5WnAHPOsh0ZoeKdUo4@wx.tenpay.com;qq_logtype=16;wx_session_time=1635600986000;wzq_qlappid=wx9cf8c670ebd68ce4;wzq_qlskey=v0ba82b202261c6c26e3e7b0196335f3;wzq_qluin=os-ppuAvAlju18KcWPvtnwzt_HzQ;zxg_openid=oA0Gbjorhi5WnAHPOsh0ZoeKdUo4`,
+                'Cookie': `wzq_channel=4001000011..;qlappid=wx9cf8c670ebd68ce4;qlskey=v0ba8297915617d4a5a04e563fc06f92;qluin=085e9858eed8b74987258621a@wx.tenpay.com;qq_logtype=16;wx_session_time=1635600986000;wzq_qlappid=wx9cf8c670ebd68ce4;wzq_qlskey=v0ba8297915617d4a5a04e563fc06f92;wzq_qluin=os-ppuAvAlju18KcWPvtnwzt_HzQ;zxg_openid=oA0Gbju6AN_bXjZ8lIAmx0O2uPZc`,
                 'Content-Type': `application/x-www-form-urlencoded`,
                 'Host': `wzq.tenpay.com`,
                 'Connection': `keep-alive`,
-                'User-Agent': `Mozilla/5.0 (Linux; Android 10; PCCM00 Build/QKQ1.191021.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045713 Mobile Safari/537.36 qqstock/9.5.1 qqstock/9.5.1 container/fund`,
+                'User-Agent': `Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.7(0x18000733) NetType/4G Language/zh_CN`,
                 'Referer': `https://wzq.tenpay.com/mp/v2/index.html?stat_data=4003000011`,
                 'Accept-Language': `zh-cn`
             },
